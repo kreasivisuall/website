@@ -8,128 +8,949 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script>
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#E0C39A",
-                        "primary-darker": "#C8A97E",
-                        "background-light": "#F9F6F2",
-                        "background-dark": "#121212",
-                        "text-light": "#F9F6F2",
-                        "text-dark": "#333333",
-                        "surface-dark": "#1E1E1E"
-                    },
-                    fontFamily: {
-                        "display": ["Playfair Display", "serif"],
-                        "body": ["Lato", "sans-serif"],
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                },
-            },
-        }
-    </script>
+
+<!-- =====================================================
+     GLOBAL DARK BACKGROUND
+===================================================== -->
+
 <style>
-        .material-symbols-outlined {
-            font-variation-settings:
-                'FILL' 0,
-                'wght' 300,
-                'GRAD' 0,
-                'opsz' 24
+
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        min-height: 100%;
+        background: #121212 !important;
+    }
+
+    body {
+        min-height: 100vh;
+        color: #F9F6F2;
+    }
+
+    main {
+        background: #121212 !important;
+        min-height: calc(100vh - 70px);
+    }
+
+    @media (max-width: 767px) {
+
+        main {
+            min-height: calc(100vh - 68px);
         }
-    </style>
-</head>
-<body class="font-body bg-background-light dark:bg-background-dark text-text-dark dark:text-text-light">
-<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
-<div class="layout-container flex h-full grow flex-col">
-<div class="flex flex-1 justify-center">
-<div class="layout-content-container flex flex-col w-full max-w-[1366px] flex-1">
-<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 px-6 md:px-12 py-5 bg-background-dark/80 backdrop-blur-md">
-<div class="flex items-center gap-4 text-text-light">
-<div class="size-6 text-primary">
-<span class="material-symbols-outlined !text-4xl">photo_camera</span>
-</div>
-<h2 class="text-text-light font-display text-2xl font-bold">KREASI VISUAL</h2>
-</div>
-<!-- NAVBAR -->
-<div class="hidden md:flex flex-1 justify-end">
-  <nav class="flex items-center gap-10">
-    <a class="text-text-light/80 hover:text-primary font-body text-base font-medium tracking-wider transition-colors" href="../index.html">BERANDA</a>
-    <a class="text-text-light/80 hover:text-primary font-body text-base font-medium tracking-wider transition-colors" href="../portfolio.html">PORTOFOLIO</a>
-    <a class="text-text-light/80 hover:text-primary font-body text-base font-medium tracking-wider transition-colors" href="../tentang_kami.html">TENTANG</a>
-    <a class="text-text-light/80 hover:text-primary font-body text-base font-medium tracking-wider transition-colors" href="../contact.html">KONTAK</a>
-  </nav>
-</div>
 
-<!-- MOBILE BUTTON -->
-<div class="md:hidden">
-  <button id="mobileMenuBtn" class="flex cursor-pointer items-center justify-center rounded-lg h-10 bg-transparent text-white gap-2 px-2.5">
-    <span class="material-symbols-outlined !text-3xl text-white">menu</span>
-  </button>
-</div>
+    }
 
-<!-- MOBILE SIDE MENU -->
-<div id="mobileMenu" class="fixed inset-0 z-50 hidden">
-  <!-- Backdrop -->
-  <div id="menuBackdrop" class="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
-
-  <!-- Panel samping -->
-  <div class="absolute left-0 top-0 h-full w-[280px] bg-background-dark p-5 text-white shadow-xl animate-slideIn">
-    <div class="flex items-center justify-between mb-6">
-      <h2 class="text-xl font-bold">kreasi_visual</h2>
-      <button id="closeMenu" class="p-2 rounded-full hover:bg-white/20">
-        <span class="material-symbols-outlined">close</span>
-      </button>
-    </div>
-
-    <nav class="bg-background-dark">
-      <ul class="flex flex-col gap-3 text-base font-medium">
-
-        <li><a href="index.html" class="flex items-center gap-3 py-2 px-2 rounded-lg hover:bg-black/10"><span class="material-symbols-outlined">home</span> Beranda</a></li>
-
-        <li><a href="portfolio.html" class="flex items-center gap-3 py-2 px-2 rounded-lg hover:bg-black/10"><span class="material-symbols-outlined">photo_camera</span> Portofolio</a></li>
-
-        <li><a href="tentang_kami.html" class="flex items-center gap-3 py-2 px-2 rounded-lg hover:bg-black/10"><span class="material-symbols-outlined">info</span> Tentang Kami</a></li>
-
-        <li><a href="contact.html" class="flex items-center gap-3 py-2 px-2 rounded-lg hover:bg-black/10"><span class="material-symbols-outlined">mail</span> Kontak</a></li>
-
-      </ul>
-    </nav>
-  </div>
-</div>
-
-<!-- ANIMASI -->
-<style>
-  @keyframes slideIn {
-    from { transform: translateX(-100%); }
-    to   { transform: translateX(0); }
-  }
-  .animate-slideIn {
-    animation: slideIn .3s ease-out;
-  }
 </style>
 
-<!-- SCRIPT TOGGLE -->
-<script>
-  const btn = document.getElementById('mobileMenuBtn');
-  const menu = document.getElementById('mobileMenu');
-  const closeBtn = document.getElementById('closeMenu');
-  const backdrop = document.getElementById('menuBackdrop');
+<!-- =====================================================
+     NAVBAR KREASI VISUAL
+===================================================== -->
 
-  btn.onclick = () => menu.classList.remove('hidden');
-  closeBtn.onclick = () => menu.classList.add('hidden');
-  backdrop.onclick = () => menu.classList.add('hidden');
-</script>
+<style>
 
+    /* ================================
+       NAVBAR
+    ================================= */
+
+    .main-navbar {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        width: 100%;
+        height: 70px;
+        background: #121212;
+        border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .navbar-container {
+        max-width: 1280px;
+        height: 100%;
+        margin: 0 auto;
+        padding: 0 32px;
+    }
+
+    .navbar-inner {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+
+    /* ================================
+       LOGO
+    ================================= */
+
+    .logo-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #F9F6F2;
+        text-decoration: none;
+    }
+
+    .logo-icon {
+        color: #E0C39A;
+        font-size: 32px;
+    }
+
+    .logo-text {
+        color: #F9F6F2;
+        font-family: "Playfair Display", serif;
+        font-size: 27px;
+        font-weight: 700;
+        white-space: nowrap;
+    }
+
+
+    /* ================================
+       MENU DESKTOP
+    ================================= */
+
+    .desktop-menu {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .desktop-menu a {
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 70px;
+
+        color: rgba(249,246,242,0.78);
+
+        font-family: "Lato", sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+
+        text-decoration: none;
+
+        transition: color 0.25s ease;
+    }
+
+    .desktop-menu a:hover {
+        color: #E0C39A;
+    }
+
+
+    /* ================================
+       MENU YANG SEDANG AKTIF
+    ================================= */
+
+    .desktop-menu a.active {
+        color: #E0C39A;
+        font-weight: 700;
+    }
+
+    .desktop-menu a.active::after {
+        content: "";
+
+        position: absolute;
+
+        left: 0;
+        right: 0;
+        bottom: 15px;
+
+        height: 2px;
+
+        background: #E0C39A;
+    }
+
+
+    /* ================================
+       TOMBOL MENU HP
+       HANYA MUNCUL DI HP
+    ================================= */
+
+    #mobileMenuBtn {
+        display: none;
+
+        width: 44px;
+        height: 44px;
+
+        align-items: center;
+        justify-content: center;
+
+        border: none;
+        outline: none;
+
+        background: transparent;
+
+        color: #F9F6F2;
+
+        cursor: pointer;
+
+        border-radius: 6px;
+    }
+
+    #mobileMenuBtn:hover {
+        color: #E0C39A;
+        background: rgba(224,195,154,0.08);
+    }
+
+    #mobileMenuBtn .material-symbols-outlined {
+        font-size: 30px;
+    }
+
+
+    /* ================================
+       MOBILE MENU
+    ================================= */
+
+    #mobileMenu {
+        position: fixed;
+        inset: 0;
+
+        z-index: 9999;
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        transition:
+            opacity 0.25s ease,
+            visibility 0.25s ease;
+    }
+
+    #mobileMenu.show {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+
+    /* ================================
+       BACKDROP
+    ================================= */
+
+    #menuBackdrop {
+        position: absolute;
+        inset: 0;
+
+        background: rgba(0,0,0,0.75);
+
+        backdrop-filter: blur(3px);
+    }
+
+
+    /* ================================
+       SIDEBAR MENU HP
+    ================================= */
+
+    #mobileSidebar {
+        position: absolute;
+
+        left: 0;
+        top: 0;
+
+        width: 280px;
+        max-width: 85vw;
+
+        height: 100vh;
+
+        background: #121212;
+
+        border-right: 1px solid rgba(255,255,255,0.08);
+
+        box-shadow: 15px 0 40px rgba(0,0,0,0.5);
+
+        transform: translateX(-100%);
+
+        transition: transform 0.3s ease;
+    }
+
+    #mobileMenu.show #mobileSidebar {
+        transform: translateX(0);
+    }
+
+
+    /* ================================
+       HEADER MENU HP
+    ================================= */
+
+    .mobile-header {
+        height: 70px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 0 20px;
+
+        border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .mobile-logo {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .mobile-logo-icon {
+        color: #E0C39A;
+        font-size: 28px;
+    }
+
+    .mobile-logo-text {
+        color: #F9F6F2;
+
+        font-family: "Playfair Display", serif;
+
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+
+    /* ================================
+       TOMBOL X
+    ================================= */
+
+    #closeMenu {
+        width: 42px;
+        height: 42px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border: none;
+        outline: none;
+
+        background: transparent;
+
+        color: #F9F6F2;
+
+        cursor: pointer;
+
+        border-radius: 6px;
+    }
+
+    #closeMenu:hover {
+        color: #E0C39A;
+        background: rgba(224,195,154,0.08);
+    }
+
+
+    /* ================================
+       MENU HP
+    ================================= */
+
+    .mobile-navigation {
+        display: flex;
+        flex-direction: column;
+
+        gap: 5px;
+
+        padding: 20px 14px;
+    }
+
+    .mobile-link {
+        display: flex;
+        align-items: center;
+
+        gap: 15px;
+
+        min-height: 50px;
+
+        padding: 12px 14px;
+
+        color: rgba(249,246,242,0.82);
+
+        font-family: "Lato", sans-serif;
+
+        font-size: 15px;
+        font-weight: 500;
+
+        text-decoration: none;
+
+        border-radius: 7px;
+
+        transition:
+            color 0.25s ease,
+            background 0.25s ease;
+    }
+
+    .mobile-link:hover {
+        color: #E0C39A;
+        background: rgba(224,195,154,0.07);
+    }
+
+
+    /* ================================
+       MENU HP AKTIF
+    ================================= */
+
+    .mobile-link.active {
+        color: #E0C39A;
+
+        background: rgba(224,195,154,0.08);
+
+        font-weight: 700;
+    }
+
+    .mobile-link.active .material-symbols-outlined {
+        color: #E0C39A;
+    }
+
+
+    /* ================================
+       RESPONSIVE
+    ================================= */
+
+    @media (max-width: 767px) {
+
+        .main-navbar {
+            height: 68px;
+        }
+
+        .navbar-container {
+            padding: 0 18px;
+        }
+
+        .navbar-inner {
+            height: 68px;
+        }
+
+        /* Menu desktop hilang */
+
+        .desktop-menu {
+            display: none !important;
+        }
+
+        /* Tombol hamburger muncul */
+
+        #mobileMenuBtn {
+            display: flex !important;
+        }
+
+        .logo-icon {
+            font-size: 29px;
+        }
+
+        .logo-text {
+            font-size: 21px;
+        }
+    }
+
+
+    /* ================================
+       DESKTOP
+    ================================= */
+
+    @media (min-width: 768px) {
+
+        .desktop-menu {
+            display: flex;
+        }
+
+        #mobileMenuBtn {
+            display: none !important;
+        }
+
+        #mobileMenu {
+            display: none !important;
+        }
+    }
+
+</style>
+
+
+<!-- =====================================================
+     NAVBAR HTML
+===================================================== -->
+
+<header class="main-navbar">
+
+    <div class="navbar-container">
+
+        <div class="navbar-inner">
+
+
+            <!-- ================================
+                 LOGO
+            ================================= -->
+
+            <div class="flex items-center gap-3">
+
+                <span class="material-symbols-outlined text-amber-200 text-4xl">
+                    photo_camera
+                </span>
+
+                <span class="font-display text-2xl font-bold">
+                    KREASI VISUAL
+                </span>
+
+            </div>
+
+
+            <!-- ================================
+                 MENU DESKTOP
+            ================================= -->
+
+            <nav class="desktop-menu">
+
+                <a href="../index.html">
+                    HOME
+                </a>
+
+                <a href="../portfolio.html">
+                    PORTFOLIO
+                </a>
+
+                <a href="../tentang_kami.html">
+                    ABOUT
+                </a>
+
+                <a href="../contact.html">
+                    CONTACT
+                </a>
+
+            </nav>
+
+
+            <!-- ================================
+                 TOMBOL MENU HP
+            ================================= -->
+
+            <button
+                id="mobileMenuBtn"
+                type="button"
+                aria-label="Buka menu"
+                aria-expanded="false"
+            >
+
+                <span class="material-symbols-outlined">
+                    menu
+                </span>
+
+            </button>
+
+
+        </div>
+
+    </div>
 
 </header>
+
+
+<!-- =====================================================
+     MOBILE MENU
+===================================================== -->
+
+<div id="mobileMenu" aria-hidden="true">
+
+
+    <!-- BACKDROP -->
+
+    <div id="menuBackdrop"></div>
+
+
+    <!-- SIDEBAR -->
+
+    <div id="mobileSidebar">
+
+
+        <!-- HEADER -->
+
+        <div class="mobile-header">
+
+            <div class="mobile-logo">
+
+                <span class="material-symbols-outlined mobile-logo-icon">
+                    photo_camera
+                </span>
+
+                <span class="mobile-logo-text">
+                    KREASI VISUAL
+                </span>
+
+            </div>
+
+
+            <!-- CLOSE -->
+
+            <button
+                id="closeMenu"
+                type="button"
+                aria-label="Tutup menu"
+            >
+
+                <span class="material-symbols-outlined">
+                    close
+                </span>
+
+            </button>
+
+        </div>
+
+
+        <!-- MENU -->
+
+        <nav class="mobile-navigation">
+
+            <a
+                href="../index.html"
+                class="mobile-link"
+            >
+
+                <span class="material-symbols-outlined">
+                    home
+                </span>
+
+                <span>
+                    HOME
+                </span>
+
+            </a>
+
+
+            <a
+                href="../portfolio.html"
+                class="mobile-link"
+            >
+
+                <span class="material-symbols-outlined">
+                    photo_camera
+                </span>
+
+                <span>
+                    PORTFOLIO
+                </span>
+
+            </a>
+
+
+            <a
+                href="../tentang_kami.html"
+                class="mobile-link"
+            >
+
+                <span class="material-symbols-outlined">
+                    info
+                </span>
+
+                <span>
+                    ABOUT
+                </span>
+
+            </a>
+
+
+            <a
+                href="../contact.html"
+                class="mobile-link"
+            >
+
+                <span class="material-symbols-outlined">
+                    chat
+                </span>
+
+                <span>
+                    CONTACT
+                </span>
+
+            </a>
+
+        </nav>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+
+    /* =========================================
+       ELEMENT
+    ========================================= */
+
+    const mobileMenuBtn =
+        document.getElementById("mobileMenuBtn");
+
+    const mobileMenu =
+        document.getElementById("mobileMenu");
+
+    const closeMenu =
+        document.getElementById("closeMenu");
+
+    const menuBackdrop =
+        document.getElementById("menuBackdrop");
+
+
+    /* =========================================
+       BUKA MENU HP
+    ========================================= */
+
+    function openMobileMenu() {
+
+        if (!mobileMenu) return;
+
+        mobileMenu.classList.add("show");
+
+        mobileMenu.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+
+        if (mobileMenuBtn) {
+
+            mobileMenuBtn.setAttribute(
+                "aria-expanded",
+                "true"
+            );
+
+        }
+
+        document.body.style.overflow = "hidden";
+    }
+
+
+    /* =========================================
+       TUTUP MENU HP
+    ========================================= */
+
+    function closeMobileMenu() {
+
+        if (!mobileMenu) return;
+
+        mobileMenu.classList.remove("show");
+
+        mobileMenu.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+        if (mobileMenuBtn) {
+
+            mobileMenuBtn.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+        }
+
+        document.body.style.overflow = "";
+    }
+
+
+    /* =========================================
+       KLIK TOMBOL HAMBURGER
+    ========================================= */
+
+    if (mobileMenuBtn) {
+
+        mobileMenuBtn.addEventListener(
+            "click",
+            openMobileMenu
+        );
+
+    }
+
+
+    /* =========================================
+       KLIK TOMBOL X
+    ========================================= */
+
+    if (closeMenu) {
+
+        closeMenu.addEventListener(
+            "click",
+            closeMobileMenu
+        );
+
+    }
+
+
+    /* =========================================
+       KLIK BACKDROP
+    ========================================= */
+
+    if (menuBackdrop) {
+
+        menuBackdrop.addEventListener(
+            "click",
+            closeMobileMenu
+        );
+
+    }
+
+
+    /* =========================================
+       MENENTUKAN HALAMAN SEKARANG
+    ========================================= */
+
+    let currentPage =
+        window.location.pathname
+        .split("/")
+        .pop()
+        .toLowerCase();
+
+
+    /*
+       Kalau website dibuka:
+       
+       /
+       
+       maka dianggap sebagai index.html
+    */
+
+    if (
+        currentPage === "" ||
+        currentPage === "/"
+    ) {
+
+        currentPage = "index.html";
+
+    }
+
+
+    /* =========================================
+       ACTIVE DESKTOP
+    ========================================= */
+
+    const desktopLinks =
+        document.querySelectorAll(
+            ".desktop-menu a"
+        );
+
+
+    desktopLinks.forEach(function (link) {
+
+        const href =
+            link.getAttribute("href");
+
+
+        if (!href) return;
+
+
+        const linkPage =
+            href
+            .split("/")
+            .pop()
+            .split("?")[0]
+            .split("#")[0]
+            .toLowerCase();
+
+
+        link.classList.remove("active");
+
+
+        if (
+            linkPage === currentPage
+        ) {
+
+            link.classList.add("active");
+
+        }
+
+    });
+
+
+    /* =========================================
+       ACTIVE MOBILE
+    ========================================= */
+
+    const mobileLinks =
+        document.querySelectorAll(
+            ".mobile-link"
+        );
+
+
+    mobileLinks.forEach(function (link) {
+
+        const href =
+            link.getAttribute("href");
+
+
+        if (!href) return;
+
+
+        const linkPage =
+            href
+            .split("/")
+            .pop()
+            .split("?")[0]
+            .split("#")[0]
+            .toLowerCase();
+
+
+        link.classList.remove("active");
+
+
+        if (
+            linkPage === currentPage
+        ) {
+
+            link.classList.add("active");
+
+        }
+
+
+        /*
+           Setelah memilih halaman,
+           menu HP ditutup.
+        */
+
+        link.addEventListener(
+            "click",
+            closeMobileMenu
+        );
+
+    });
+
+
+    /* =========================================
+       TOMBOL ESC
+    ========================================= */
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (
+                event.key === "Escape" &&
+                mobileMenu &&
+                mobileMenu.classList.contains("show")
+            ) {
+
+                closeMobileMenu();
+
+            }
+
+        }
+    );
+
+
+    /* =========================================
+       KETIKA LAYAR DIPERBESAR
+    ========================================= */
+
+    window.addEventListener(
+        "resize",
+        function () {
+
+            if (window.innerWidth >= 768) {
+
+                closeMobileMenu();
+
+            }
+
+        }
+    );
+
+});
+
+</script>
 <main class="flex flex-1 flex-col">
 <h1 class="px-4 pb-2 pt-4 text-left text-[32px] font-bold leading-tight tracking-tight text-slate-900 dark:text-white">Prewedding</h1>
 <!-- <p class="px-4 pb-3 text-base font-normal leading-normal text-slate-600 dark:text-slate-300">

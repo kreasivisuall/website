@@ -1,123 +1,2130 @@
 <!DOCTYPE html>
+<html class="dark" lang="en">
 
-<html class="dark" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Kategori Portofolio</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script>
+<head>
+
+    <meta charset="utf-8">
+
+    <meta
+        content="width=device-width, initial-scale=1.0"
+        name="viewport"
+    >
+
+    <title>Portfolio | KREASI VISUAL</title>
+
+
+    <!-- ========================================================= -->
+    <!-- ===================== TAILWIND ========================== -->
+    <!-- ========================================================= -->
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+
+    <!-- ========================================================= -->
+    <!-- ======================= GOOGLE FONT ==================== -->
+    <!-- ========================================================= -->
+
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+
+    <link
+        crossorigin=""
+        href="https://fonts.gstatic.com"
+        rel="preconnect"
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Lato:wght@300;400;500;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- ========================================================= -->
+    <!-- ==================== MATERIAL ICON ===================== -->
+    <!-- ========================================================= -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- ========================================================= -->
+    <!-- ===================== TAILWIND CONFIG ================== -->
+    <!-- ========================================================= -->
+
+    <script>
+
         tailwind.config = {
+
             darkMode: "class",
+
             theme: {
+
                 extend: {
+
                     colors: {
+
                         "primary": "#E0C39A",
+
                         "primary-darker": "#C8A97E",
+
                         "background-light": "#F9F6F2",
+
                         "background-dark": "#121212",
+
                         "text-light": "#F9F6F2",
+
                         "text-dark": "#333333",
+
                         "surface-dark": "#1E1E1E"
+
                     },
+
+
                     fontFamily: {
-                        "display": ["Playfair Display", "serif"],
-                        "body": ["Lato", "sans-serif"],
+
+                        "display": [
+                            "Playfair Display",
+                            "serif"
+                        ],
+
+                        "body": [
+                            "Lato",
+                            "sans-serif"
+                        ]
+
                     },
+
+
                     borderRadius: {
+
                         "DEFAULT": "0.25rem",
+
                         "lg": "0.5rem",
+
                         "xl": "0.75rem",
+
                         "full": "9999px"
-                    },
-                },
-            },
-        }
+
+                    }
+
+                }
+
+            }
+
+        };
+
     </script>
-<style>
+
+
+    <!-- ========================================================= -->
+    <!-- =========================== CSS ========================= -->
+    <!-- ========================================================= -->
+
+    <style>
+
+
+        /* ===================================================== */
+        /* ====================== RESET ======================== */
+        /* ===================================================== */
+
+        * {
+
+            box-sizing: border-box;
+
+        }
+
+
+        html {
+
+            scroll-behavior: smooth;
+
+        }
+
+
+        body {
+
+            margin: 0;
+
+            padding: 0;
+
+            background: #121212;
+
+            color: #F9F6F2;
+
+            font-family: 'Lato', sans-serif;
+
+            overflow-x: hidden;
+
+        }
+
+
+        /* ===================================================== */
+        /* ======================= FONT ======================== */
+        /* ===================================================== */
+
+        .font-display {
+
+            font-family: 'Playfair Display', serif;
+
+        }
+
+
+        /* ===================================================== */
+        /* ================= MATERIAL SYMBOL =================== */
+        /* ===================================================== */
+
         .material-symbols-outlined {
+
             font-variation-settings:
+
                 'FILL' 0,
                 'wght' 300,
                 'GRAD' 0,
-                'opsz' 24
+                'opsz' 24;
+
         }
+
+
+        /* ===================================================== */
+        /* ======================= NAVBAR ====================== */
+        /* ===================================================== */
+
+        .main-navbar {
+
+            position: sticky;
+
+            top: 0;
+
+            width: 100%;
+
+            z-index: 1000;
+
+            background: rgba(18, 18, 18, 0.97);
+
+            border-bottom:
+                1px solid
+                rgba(255, 255, 255, 0.08);
+
+            backdrop-filter: blur(14px);
+
+            -webkit-backdrop-filter: blur(14px);
+
+        }
+
+
+        .navbar-container {
+
+            width: 100%;
+
+            max-width: 1280px;
+
+            margin: 0 auto;
+
+            padding: 0 32px;
+
+        }
+
+
+        .navbar-inner {
+
+            height: 74px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+        }
+
+
+        /* ===================================================== */
+        /* ========================= LOGO ====================== */
+        /* ===================================================== */
+
+        .logo-display {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            color: #F9F6F2;
+
+            white-space: nowrap;
+
+        }
+
+
+        .logo-icon {
+
+            color: #E0C39A;
+
+            font-size: 34px;
+
+        }
+
+
+        .logo-text {
+
+            color: #F9F6F2;
+
+            font-family: 'Playfair Display', serif;
+
+            font-size: 28px;
+
+            font-weight: 700;
+
+            letter-spacing: -0.3px;
+
+        }
+
+
+        /* ===================================================== */
+        /* ===================== DESKTOP MENU ================= */
+        /* ===================================================== */
+
+        .desktop-menu {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 40px;
+
+        }
+
+
+        .desktop-menu a {
+
+            position: relative;
+
+            display: flex;
+
+            align-items: center;
+
+            height: 74px;
+
+            color:
+                rgba(249, 246, 242, 0.78);
+
+            font-family: 'Lato', sans-serif;
+
+            font-size: 15px;
+
+            font-weight: 500;
+
+            text-decoration: none;
+
+            letter-spacing: 0.3px;
+
+            transition:
+                color 0.3s ease;
+
+        }
+
+
+        .desktop-menu a:hover {
+
+            color: #E0C39A;
+
+        }
+
+
+        .desktop-menu a.active {
+
+            color: #E0C39A;
+
+            font-weight: 700;
+
+        }
+
+
+        .desktop-menu a.active::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            right: 0;
+
+            bottom: 17px;
+
+            height: 2px;
+
+            background: #E0C39A;
+
+            border-radius: 999px;
+
+        }
+
+
+        /* ===================================================== */
+        /* ====================== HAMBURGER ==================== */
+        /* ===================================================== */
+
+        #mobileMenuBtn {
+
+            display: none;
+
+            width: 44px;
+
+            height: 44px;
+
+            padding: 0;
+
+            border: none;
+
+            outline: none;
+
+            background: transparent;
+
+            color: #F9F6F2;
+
+            cursor: pointer;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 7px;
+
+            transition:
+                color 0.3s ease,
+                background 0.3s ease;
+
+        }
+
+
+        #mobileMenuBtn:hover {
+
+            color: #E0C39A;
+
+            background:
+                rgba(224, 195, 154, 0.08);
+
+        }
+
+
+        #mobileMenuBtn .material-symbols-outlined {
+
+            font-size: 30px;
+
+        }
+
+
+        /* ===================================================== */
+        /* ===================== MOBILE MENU ================== */
+        /* ===================================================== */
+
+        #mobileMenu {
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 9999;
+
+            visibility: hidden;
+
+            opacity: 0;
+
+            pointer-events: none;
+
+            transition:
+                opacity 0.3s ease,
+                visibility 0.3s ease;
+
+        }
+
+
+        #mobileMenu.show {
+
+            visibility: visible;
+
+            opacity: 1;
+
+            pointer-events: auto;
+
+        }
+
+
+        /* ===================================================== */
+        /* ======================= BACKDROP ==================== */
+        /* ===================================================== */
+
+        #menuBackdrop {
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                rgba(0, 0, 0, 0.75);
+
+            backdrop-filter: blur(4px);
+
+            -webkit-backdrop-filter: blur(4px);
+
+        }
+
+
+        /* ===================================================== */
+        /* ======================== SIDEBAR ==================== */
+        /* ===================================================== */
+
+        #mobileSidebar {
+
+            position: absolute;
+
+            left: 0;
+
+            top: 0;
+
+            width: 290px;
+
+            max-width: 85vw;
+
+            height: 100vh;
+
+            background: #121212;
+
+            border-right:
+                1px solid
+                rgba(255, 255, 255, 0.08);
+
+            box-shadow:
+                15px 0 40px
+                rgba(0, 0, 0, 0.5);
+
+            transform: translateX(-100%);
+
+            transition:
+                transform 0.35s ease;
+
+            overflow-y: auto;
+
+        }
+
+
+        #mobileMenu.show #mobileSidebar {
+
+            transform: translateX(0);
+
+        }
+
+
+        /* ===================================================== */
+        /* =================== MOBILE HEADER ================== */
+        /* ===================================================== */
+
+        .mobile-header {
+
+            height: 74px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 0 20px;
+
+            border-bottom:
+                1px solid
+                rgba(255, 255, 255, 0.08);
+
+        }
+
+
+        .mobile-logo {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+        }
+
+
+        .mobile-logo-icon {
+
+            color: #E0C39A;
+
+            font-size: 28px;
+
+        }
+
+
+        .mobile-logo-text {
+
+            color: #F9F6F2;
+
+            font-family:
+                'Playfair Display',
+                serif;
+
+            font-size: 19px;
+
+            font-weight: 700;
+
+        }
+
+
+        /* ===================================================== */
+        /* ===================== CLOSE BUTTON ================= */
+        /* ===================================================== */
+
+        #closeMenu {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            width: 42px;
+
+            height: 42px;
+
+            padding: 0;
+
+            border: none;
+
+            outline: none;
+
+            background: transparent;
+
+            color: #F9F6F2;
+
+            cursor: pointer;
+
+            border-radius: 7px;
+
+            transition:
+                color 0.3s ease,
+                background 0.3s ease;
+
+        }
+
+
+        #closeMenu:hover {
+
+            color: #E0C39A;
+
+            background:
+                rgba(224, 195, 154, 0.08);
+
+        }
+
+
+        /* ===================================================== */
+        /* ==================== MOBILE LINKS ================= */
+        /* ===================================================== */
+
+        .mobile-navigation {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 5px;
+
+            padding: 22px 14px;
+
+        }
+
+
+        .mobile-link {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            min-height: 52px;
+
+            padding: 13px 14px;
+
+            color:
+                rgba(249, 246, 242, 0.82);
+
+            font-family: 'Lato', sans-serif;
+
+            font-size: 15px;
+
+            font-weight: 500;
+
+            text-decoration: none;
+
+            border-radius: 7px;
+
+            transition:
+                color 0.3s ease,
+                background 0.3s ease,
+                padding-left 0.3s ease;
+
+        }
+
+
+        .mobile-link:hover {
+
+            color: #E0C39A;
+
+            background:
+                rgba(224, 195, 154, 0.07);
+
+            padding-left: 19px;
+
+        }
+
+
+        .mobile-link.active {
+
+            color: #E0C39A;
+
+            background:
+                rgba(224, 195, 154, 0.08);
+
+            font-weight: 700;
+
+        }
+
+
+        .mobile-link.active
+        .material-symbols-outlined {
+
+            color: #E0C39A;
+
+        }
+
+
+        /* ===================================================== */
+        /* ================= PORTFOLIO SECTION ================ */
+        /* ===================================================== */
+
+        .portfolio-categories {
+
+            width: 100%;
+
+            max-width: 1280px;
+
+            margin: 0 auto;
+
+            padding:
+                70px 32px
+                90px;
+
+        }
+
+
+        /* ===================================================== */
+        /* ======================= HEADING ===================== */
+        /* ===================================================== */
+
+        .portfolio-heading {
+
+            text-align: center;
+
+            margin-bottom: 50px;
+
+        }
+
+
+        .portfolio-eyebrow {
+
+            display: block;
+
+            margin-bottom: 13px;
+
+            color: #E0C39A;
+
+            font-family: 'Lato', sans-serif;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            letter-spacing: 4px;
+
+        }
+
+
+        .portfolio-heading h1 {
+
+            margin: 0;
+
+            color: #F9F6F2;
+
+            font-family:
+                'Playfair Display',
+                serif;
+
+            font-size:
+                clamp(42px, 6vw, 68px);
+
+            font-weight: 700;
+
+            line-height: 1;
+
+            letter-spacing: -1px;
+
+        }
+
+
+        .portfolio-heading p {
+
+            max-width: 520px;
+
+            margin:
+                18px auto 0;
+
+            color:
+                rgba(249, 246, 242, 0.55);
+
+            font-family:
+                'Lato',
+                sans-serif;
+
+            font-size: 15px;
+
+            line-height: 1.7;
+
+        }
+
+
+        /* ===================================================== */
+        /* ========================= GRID ====================== */
+        /* ===================================================== */
+
+        .category-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, minmax(0, 1fr));
+
+            gap: 18px;
+
+        }
+
+
+        /* ===================================================== */
+        /* ========================= CARD ====================== */
+        /* ===================================================== */
+
+        .category-card {
+
+            position: relative;
+
+            display: block;
+
+            width: 100%;
+
+            aspect-ratio: 3 / 4;
+
+            overflow: hidden;
+
+            border-radius: 14px;
+
+            background: #1E1E1E;
+
+            text-decoration: none;
+
+            box-shadow:
+                0 10px 35px
+                rgba(0, 0, 0, 0.25);
+
+            transition:
+                transform 0.45s ease,
+                box-shadow 0.45s ease;
+
+        }
+
+
+        .category-card:hover {
+
+            transform:
+                translateY(-7px);
+
+            box-shadow:
+                0 20px 50px
+                rgba(0, 0, 0, 0.42);
+
+        }
+
+
+        /* ===================================================== */
+        /* ========================= IMAGE ===================== */
+        /* ===================================================== */
+
+        .category-image {
+
+            position: relative;
+
+            width: 100%;
+
+            height: 100%;
+
+            background-size: cover;
+
+            background-position: center;
+
+            transition:
+                transform 0.75s
+                cubic-bezier(.2,.7,.2,1);
+
+        }
+
+
+        .category-card:hover
+        .category-image {
+
+            transform:
+                scale(1.07);
+
+        }
+
+
+        /* ===================================================== */
+        /* ====================== CONTENT ====================== */
+        /* ===================================================== */
+
+        .category-content {
+
+            position: absolute;
+
+            left: 0;
+
+            right: 0;
+
+            bottom: 0;
+
+            z-index: 3;
+
+            padding: 25px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: flex-start;
+
+        }
+
+
+        /* ===================================================== */
+        /* ======================= NUMBER ====================== */
+        /* ===================================================== */
+
+        .category-number {
+
+            margin-bottom: 8px;
+
+            color: #E0C39A;
+
+            font-family:
+                'Lato',
+                sans-serif;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            opacity: 0.95;
+
+        }
+
+
+        /* ===================================================== */
+        /* ======================== TITLE ====================== */
+        /* ===================================================== */
+
+        .category-content h2 {
+
+            margin: 0;
+
+            color: #FFFFFF;
+
+            font-family:
+                'Playfair Display',
+                serif;
+
+            font-size:
+                clamp(25px, 3vw, 34px);
+
+            font-weight: 700;
+
+            line-height: 1.1;
+
+            text-shadow:
+                0 3px 15px
+                rgba(0,0,0,0.5);
+
+        }
+
+
+        /* ===================================================== */
+        /* ======================== ARROW ====================== */
+        /* ===================================================== */
+
+        .category-arrow {
+
+            display: inline-block;
+
+            margin-top: 13px;
+
+            color: #E0C39A;
+
+            font-family:
+                'Lato',
+                sans-serif;
+
+            font-size: 21px;
+
+            line-height: 1;
+
+            opacity: 0;
+
+            transform:
+                translateX(-12px);
+
+            transition:
+                opacity 0.3s ease,
+                transform 0.3s ease;
+
+        }
+
+
+        .category-card:hover
+        .category-arrow {
+
+            opacity: 1;
+
+            transform:
+                translateX(0);
+
+        }
+
+
+        /* ===================================================== */
+        /* ======================== TABLET ==================== */
+        /* ===================================================== */
+
+        @media (max-width: 1000px) {
+
+            .navbar-container {
+
+                padding:
+                    0 24px;
+
+            }
+
+
+            .desktop-menu {
+
+                gap: 25px;
+
+            }
+
+
+            .desktop-menu a {
+
+                font-size: 14px;
+
+            }
+
+
+            .logo-text {
+
+                font-size: 24px;
+
+            }
+
+
+            .portfolio-categories {
+
+                padding:
+                    60px 24px
+                    70px;
+
+            }
+
+
+            .category-grid {
+
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+
+                gap: 15px;
+
+            }
+
+        }
+
+
+        /* ===================================================== */
+        /* ======================= MOBILE ====================== */
+        /* ===================================================== */
+
+        @media (max-width: 767px) {
+
+            .navbar-container {
+
+                padding:
+                    0 18px;
+
+            }
+
+
+            .navbar-inner {
+
+                height: 68px;
+
+            }
+
+
+            .logo-icon {
+
+                font-size: 30px;
+
+            }
+
+
+            .logo-text {
+
+                font-size: 21px;
+
+            }
+
+
+            .desktop-menu {
+
+                display: none !important;
+
+            }
+
+
+            #mobileMenuBtn {
+
+                display: flex !important;
+
+            }
+
+
+            .portfolio-categories {
+
+                padding:
+                    45px 16px
+                    60px;
+
+            }
+
+
+            .portfolio-heading {
+
+                margin-bottom:
+                    34px;
+
+            }
+
+
+            .portfolio-eyebrow {
+
+                font-size: 10px;
+
+                letter-spacing: 3px;
+
+            }
+
+
+            .portfolio-heading h1 {
+
+                font-size: 44px;
+
+                letter-spacing: -0.5px;
+
+            }
+
+
+            .portfolio-heading p {
+
+                margin-top: 14px;
+
+                font-size: 14px;
+
+                line-height: 1.6;
+
+            }
+
+
+            .category-grid {
+
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+
+                gap: 10px;
+
+            }
+
+
+            .category-card {
+
+                border-radius: 11px;
+
+            }
+
+
+            .category-content {
+
+                padding: 15px;
+
+            }
+
+
+            .category-number {
+
+                font-size: 8px;
+
+                margin-bottom: 5px;
+
+            }
+
+
+            .category-content h2 {
+
+                font-size: 20px;
+
+            }
+
+
+            .category-arrow {
+
+                display: none;
+
+            }
+
+        }
+
+
+        /* ===================================================== */
+        /* =================== SMALL PHONE ==================== */
+        /* ===================================================== */
+
+        @media (max-width: 380px) {
+
+            .portfolio-categories {
+
+                padding-left: 12px;
+
+                padding-right: 12px;
+
+            }
+
+
+            .category-grid {
+
+                gap: 8px;
+
+            }
+
+
+            .category-content {
+
+                padding: 13px;
+
+            }
+
+
+            .category-content h2 {
+
+                font-size: 18px;
+
+            }
+
+        }
+
+
+        /* ===================================================== */
+        /* ====================== DESKTOP ====================== */
+        /* ===================================================== */
+
+        @media (min-width: 768px) {
+
+            #mobileMenuBtn {
+
+                display: none !important;
+
+            }
+
+
+            .desktop-menu {
+
+                display: flex !important;
+
+            }
+
+
+            #mobileMenu {
+
+                display: none !important;
+
+            }
+
+        }
+
+
     </style>
+
 </head>
-<body class="font-body bg-background-light dark:bg-background-dark text-text-dark dark:text-text-light">
-<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
-<div class="layout-container flex h-full grow flex-col">
-<div class="flex flex-1 justify-center">
-<div class="layout-content-container flex flex-col w-full max-w-[1366px] flex-1">
-<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 px-6 md:px-12 py-5 bg-background-dark/80 backdrop-blur-md">
-<div class="flex items-center gap-4 text-text-light">
-<div class="size-6 text-primary">
-<span class="material-symbols-outlined !text-4xl">photo_camera</span>
-</div>
-<h2 class="text-text-light font-display text-2xl font-bold">KREASI VISUAL</h2>
-</div>
-<div class="hidden md:flex flex-1 justify-end">
-<nav class="flex items-center gap-10">
-<a class="text-text-light/80 hover:text-primary font-body text-base font-medium tracking-wider transition-colors" href="index.html">BERANDA</a>
-<a class="text-text-light/80 hover:text-primary font-body text-base font-medium tracking-wider transition-colors" href="portfolio.html">PORTOFOLIO</a>
-<!-- <a class="text-text-light/80 hover:text-primary font-body text-base font-medium tracking-wider transition-colors" href="daftar_layanan.html">LAYANAN</a> -->
-<a class="text-text-light/80 hover:text-primary font-body text-base font-medium tracking-wider transition-colors" href="tentang_kami.html">TENTANG</a>
-<a class="text-text-light/80 hover:text-primary font-body text-base font-medium tracking-wider transition-colors" href="contact.html">KONTAK</a>
-</nav>
-</div>
-<div class="md:hidden">
-<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-transparent text-white gap-2 text-sm font-bold min-w-0 px-2.5">
-<span class="material-symbols-outlined !text-3xl text-white">menu</span>
-</button>
-</div>
-</header>
-<!-- Spacer -->
-<div class="h-4"></div>
-<!-- Image Grid -->
-<main class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4 pt-0">
-<a href="kategori_wedding/wedding.html" class="block">
-  <div class="bg-cover bg-center flex flex-col gap-3 rounded-xl justify-end p-4 aspect-[3/4] group"
-       data-alt="A newly married couple smiling at their wedding."
-       style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 60%), url("kategori_wedding/upload/rionaldo/1.jpg");'>
-    <p class="text-white text-base font-bold leading-tight line-clamp-2 transition-transform duration-300 group-hover:scale-105">
-      Wedding
-    </p>
-  </div>
-</a>
 
-<a href="kategori_preweding/prewedding.html" class="block">
-  <div class="bg-cover bg-center flex flex-col gap-3 rounded-xl justify-end p-4 aspect-[3/4] group"
-       data-alt="A couple posing for a prewedding photoshoot in a scenic outdoor location."
-       style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 60%), url("kategori_preweding/upload/esa/12.jpg");'>
-    <p class="text-white text-base font-bold leading-tight line-clamp-2 transition-transform duration-300 group-hover:scale-105">
-      Prewedding
-    </p>
-  </div>
-</a>
 
-<a href="kategori_lamaran/lamaran.html" class="block">
-  <div class="bg-cover bg-center flex flex-col gap-3 rounded-xl justify-end p-4 aspect-[3/4] group"
-       data-alt="A close-up shot of a professionally photographed product on a clean background."
-       style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 60%), url("kategori_lamaran/upload/fariz/6.jpg");'>
-    <p class="text-white text-base font-bold leading-tight line-clamp-2 transition-transform duration-300 group-hover:scale-105">
-      Engagement
-    </p>
-  </div>
-</a>
-<div class="bg-cover bg-center flex flex-col gap-3 rounded-xl justify-end p-4 aspect-[3/4] group" data-alt="A beautiful landscape photo of mountains and a lake during a trip." style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 60%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBeInK1Dcmho3dj1iL0NFyMQlo9fzlc_uY4AvPcIzJKE_MfdPpwGCLFx3m51hxSxhGU3kbKdUna8RqR8WMvD42XaVLOg_H9WfVZ02nYdGQt5gEQu9FYu2E_fJMEuDax3fbVkiBRhK_8m2yJFTODAo8IyNfDNbWR_CM8Hb8MVJLxrYRoTol7bsLBgzogb4r6k9EsEwOB-3s6JUS8xp72K7xGMeW8LVofnO-ciQSPkMF-1wtl85yQmUatoH_D7YDZRsWZcRvxQUr4nA");'>
-<p class="text-white text-base font-bold leading-tight line-clamp-2 transition-transform duration-300 group-hover:scale-105">Jalan-jalan</p>
-</div>
-<div class="bg-cover bg-center flex flex-col gap-3 rounded-xl justify-end p-4 aspect-[3/4] group" data-alt="People enjoying a corporate event with festive lighting." style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 60%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCYqzVnWFOg0YYlB3rkU3QZmeJL_BWQnLc2gjFeoudQsA1FNrl6kRayBd5Vay_Q-3jl5VXBqvb--wlRkp44OEpMV7z9BkjJCk9Rag-p94O6_cwpRoaIwep5faalo4yh8bnJv9zAYmNiN2vDPV0g97v8MR6YWwKn71VksZUXY3vjIXc068xcGXuQR1XO_PUnn7psq5JzcNlEetoPbuMfCwgu4E5u-oR2GfMMvPguwSX_j1heik40WMrQSRyFm0WL-qEmC-qRgw2osA");'>
-<p class="text-white text-base font-bold leading-tight line-clamp-2 transition-transform duration-300 group-hover:scale-105">Event</p>
-</div>
-<div class="bg-cover bg-center flex flex-col gap-3 rounded-xl justify-end p-4 aspect-[3/4] group" data-alt="A happy family portrait taken outdoors." style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 60%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCJZnGAUXxaFJ1D0BPV7bmqcSMIZYrVh8WP9nIzw47fGMdrsNuVkyEV2EF_lUzfKlEVWsa2T6mcfrLZB-tS2zr0k5iX_r2SClIrhezBWnLUryBShYtVoglss-piciTArelpBdxcAD9sZlHKALe5J93oKsJ1XgQO_qnM_NlY20HhX4aIJ_H7hAp61b19-pJwNWa7IONuBK8PSN7dJC6z8LIbi_EAKLJifut86AunX6GlVSQobvBNOXHRGTMFcybDvtefoo9tLS7l2g");'>
-<p class="text-white text-base font-bold leading-tight line-clamp-2 transition-transform duration-300 group-hover:scale-105">Keluarga</p>
-</div>
-</main>
-<!-- Bottom Spacer -->
-<div class="h-5"></div>
-</div>
-</body></html>
+<body>
+
+
+    <!-- ========================================================= -->
+    <!-- ========================== NAVBAR ======================= -->
+    <!-- ========================================================= -->
+
+    <header class="main-navbar">
+
+        <div class="navbar-container">
+
+            <div class="navbar-inner">
+
+
+                <!-- ================= LOGO ================= -->
+
+                <div class="logo-display">
+
+                    <span class="material-symbols-outlined logo-icon">
+                        photo_camera
+                    </span>
+
+                    <span class="logo-text">
+                        KREASI VISUAL
+                    </span>
+
+                </div>
+
+
+                <!-- ================= DESKTOP MENU ================= -->
+
+                <nav class="desktop-menu">
+
+                    <a href="index.html">
+                        HOME
+                    </a>
+
+                    <a href="portfolio.html">
+                        PORTFOLIO
+                    </a>
+
+                    <a href="tentang_kami.html">
+                        ABOUT
+                    </a>
+
+                    <a href="contact.html">
+                        CONTACT
+                    </a>
+
+                </nav>
+
+
+                <!-- ================= MOBILE BUTTON ================= -->
+
+                <button
+                    id="mobileMenuBtn"
+                    type="button"
+                    aria-label="Open menu"
+                    aria-expanded="false"
+                >
+
+                    <span class="material-symbols-outlined">
+                        menu
+                    </span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ========================================================= -->
+    <!-- ======================= MOBILE MENU ===================== -->
+    <!-- ========================================================= -->
+
+    <div
+        id="mobileMenu"
+        aria-hidden="true"
+    >
+
+        <!-- BACKDROP -->
+
+        <div id="menuBackdrop"></div>
+
+
+        <!-- SIDEBAR -->
+
+        <div id="mobileSidebar">
+
+
+            <!-- MOBILE HEADER -->
+
+            <div class="mobile-header">
+
+
+                <div class="mobile-logo">
+
+                    <span class="material-symbols-outlined mobile-logo-icon">
+                        photo_camera
+                    </span>
+
+                    <span class="mobile-logo-text">
+                        KREASI VISUAL
+                    </span>
+
+                </div>
+
+
+                <!-- CLOSE -->
+
+                <button
+                    id="closeMenu"
+                    type="button"
+                    aria-label="Close menu"
+                >
+
+                    <span class="material-symbols-outlined">
+                        close
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <!-- MOBILE NAVIGATION -->
+
+            <nav class="mobile-navigation">
+
+
+                <a
+                    href="index.html"
+                    class="mobile-link"
+                >
+
+                    <span class="material-symbols-outlined">
+                        home
+                    </span>
+
+                    <span>
+                        HOME
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="portfolio.html"
+                    class="mobile-link"
+                >
+
+                    <span class="material-symbols-outlined">
+                        photo_camera
+                    </span>
+
+                    <span>
+                        PORTFOLIO
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="tentang_kami.html"
+                    class="mobile-link"
+                >
+
+                    <span class="material-symbols-outlined">
+                        info
+                    </span>
+
+                    <span>
+                        ABOUT
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="contact.html"
+                    class="mobile-link"
+                >
+
+                    <span class="material-symbols-outlined">
+                        chat
+                    </span>
+
+                    <span>
+                        CONTACT
+                    </span>
+
+                </a>
+
+
+            </nav>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================================= -->
+    <!-- ================= PORTFOLIO CATEGORIES ================== -->
+    <!-- ========================================================= -->
+
+    <main class="portfolio-categories">
+
+
+        <!-- ================= HEADING ================= -->
+
+        <div class="portfolio-heading">
+
+            <span class="portfolio-eyebrow">
+                OUR WORK
+            </span>
+
+            <h1>
+                Portfolio
+            </h1>
+
+            <p>
+                Explore our collection of captured moments,
+                carefully documented with creativity and emotion.
+            </p>
+
+        </div>
+
+
+        <!-- ================= CATEGORY GRID ================= -->
+
+        <div class="category-grid">
+
+
+            <!-- ================================================= -->
+            <!-- ===================== WEDDING =================== -->
+            <!-- ================================================= -->
+
+            <a
+                href="kategori_wedding/wedding.html"
+                class="category-card"
+            >
+
+                <div
+                    class="category-image"
+                    style="
+                        background-image:
+                        linear-gradient(
+                            180deg,
+                            rgba(0,0,0,0.02) 15%,
+                            rgba(0,0,0,0.82) 100%
+                        ),
+                        url('kategori_wedding/upload/rionaldo/1.jpg');
+                    "
+                >
+
+                    <div class="category-content">
+
+                        <span class="category-number">
+                            01
+                        </span>
+
+                        <h2>
+                            Wedding
+                        </h2>
+
+                        <span class="category-arrow">
+                            →
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <!-- ================================================= -->
+            <!-- =================== PREWEDDING ================= -->
+            <!-- ================================================= -->
+
+            <a
+                href="kategori_preweding/prewedding.html"
+                class="category-card"
+            >
+
+                <div
+                    class="category-image"
+                    style="
+                        background-image:
+                        linear-gradient(
+                            180deg,
+                            rgba(0,0,0,0.02) 15%,
+                            rgba(0,0,0,0.82) 100%
+                        ),
+                        url('kategori_preweding/upload/esa/12.jpg');
+                    "
+                >
+
+                    <div class="category-content">
+
+                        <span class="category-number">
+                            02
+                        </span>
+
+                        <h2>
+                            Prewedding
+                        </h2>
+
+                        <span class="category-arrow">
+                            →
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <!-- ================================================= -->
+            <!-- ==================== ENGAGEMENT ================ -->
+            <!-- ================================================= -->
+
+            <a
+                href="kategori_lamaran/lamaran.html"
+                class="category-card"
+            >
+
+                <div
+                    class="category-image"
+                    style="
+                        background-image:
+                        linear-gradient(
+                            180deg,
+                            rgba(0,0,0,0.02) 15%,
+                            rgba(0,0,0,0.82) 100%
+                        ),
+                        url('kategori_lamaran/upload/fariz/6.jpg');
+                    "
+                >
+
+                    <div class="category-content">
+
+                        <span class="category-number">
+                            03
+                        </span>
+
+                        <h2>
+                            Engagement
+                        </h2>
+
+                        <span class="category-arrow">
+                            →
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <!-- ================================================= -->
+            <!-- ====================== TRAVEL ================== -->
+            <!-- ================================================= -->
+
+            <a
+                href="kategori_travel/travel.html"
+                class="category-card"
+            >
+            <div class="category-card">
+
+                <div
+                    class="category-image"
+                    style="
+                        background-image:
+                        linear-gradient(
+                            180deg,
+                            rgba(0,0,0,0.02) 15%,
+                            rgba(0,0,0,0.82) 100%
+                        ),
+                        url('kategori_travel/upload/1.jpg');
+                    "
+                >
+
+                    <div class="category-content">
+
+                        <span class="category-number">
+                            05
+                        </span>
+
+                        <h2>
+                            Travel
+                        </h2>
+
+                        <span class="category-arrow">
+                            →
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+            </a>
+
+
+            <!-- ================================================= -->
+            <!-- ======================= EVENT ================== -->
+            <!-- ================================================= -->
+            <a
+                href="kategori_event/event.html"
+                class="category-card"
+            >
+            <div class="category-card">
+
+                <div
+                    class="category-image"
+                    style="
+                        background-image:
+                        linear-gradient(
+                            180deg,
+                            rgba(0,0,0,0.02) 15%,
+                            rgba(0,0,0,0.82) 100%
+                        ),
+                        url('kategori_event/upload/modeling/1.jpg');
+                    "
+                >
+
+                    <div class="category-content">
+
+                        <span class="category-number">
+                            05
+                        </span>
+
+                        <h2>
+                            Event
+                        </h2>
+
+                        <span class="category-arrow">
+                            →
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+            </a>
+
+
+            <!-- ================================================= -->
+            <!-- ====================== FAMILY ================== -->
+            <!-- ================================================= -->
+
+            <div class="category-card">
+
+                <div
+                    class="category-image"
+                    style="
+                        background-image:
+                        linear-gradient(
+                            180deg,
+                            rgba(0,0,0,0.02) 15%,
+                            rgba(0,0,0,0.82) 100%
+                        ),
+                        url('https://lh3.googleusercontent.com/aida-public/AB6AXuCJZnGAUXxaFJ1D0BPV7bmqcSMIZYrVh8WP9nIzw47fGMdrsNuVkyEV2EF_lUzfKlEVWsa2T6mcfrLZB-tS2zr0k5iX_r2SClIrhezBWnLUryBShYtVoglss-piciTArelpBdxcAD9sZlHKALe5J93oKsJ1XgQO_qnM_NlY20HhX4aIJ_H7hAp61b19-pJwNWa7IONuBK8PSN7dJC6z8LIbi_EAKLJifut86AunX6GlVSQobvBNOXHRGTMFcybDvtefoo9tLS7l2g');
+                    "
+                >
+
+                    <div class="category-content">
+
+                        <span class="category-number">
+                            06
+                        </span>
+
+                        <h2>
+                            Family
+                        </h2>
+
+                        <span class="category-arrow">
+                            →
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+    <!-- ========================================================= -->
+    <!-- ======================== JAVASCRIPT ==================== -->
+    <!-- ========================================================= -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+
+                /* ================================================= */
+                /* ==================== ELEMENT ==================== */
+                /* ================================================= */
+
+                const mobileMenuBtn =
+                    document.getElementById(
+                        "mobileMenuBtn"
+                    );
+
+
+                const mobileMenu =
+                    document.getElementById(
+                        "mobileMenu"
+                    );
+
+
+                const closeMenu =
+                    document.getElementById(
+                        "closeMenu"
+                    );
+
+
+                const menuBackdrop =
+                    document.getElementById(
+                        "menuBackdrop"
+                    );
+
+
+                const mobileLinks =
+                    document.querySelectorAll(
+                        ".mobile-link"
+                    );
+
+
+                const desktopLinks =
+                    document.querySelectorAll(
+                        ".desktop-menu a"
+                    );
+
+
+                /* ================================================= */
+                /* ==================== OPEN ======================= */
+                /* ================================================= */
+
+                function openMobileMenu() {
+
+                    if (!mobileMenu) return;
+
+
+                    mobileMenu.classList.add(
+                        "show"
+                    );
+
+
+                    mobileMenu.setAttribute(
+                        "aria-hidden",
+                        "false"
+                    );
+
+
+                    if (mobileMenuBtn) {
+
+                        mobileMenuBtn.setAttribute(
+                            "aria-expanded",
+                            "true"
+                        );
+
+                    }
+
+
+                    document.body.style.overflow =
+                        "hidden";
+
+                }
+
+
+                /* ================================================= */
+                /* ==================== CLOSE ====================== */
+                /* ================================================= */
+
+                function closeMobileMenu() {
+
+                    if (!mobileMenu) return;
+
+
+                    mobileMenu.classList.remove(
+                        "show"
+                    );
+
+
+                    mobileMenu.setAttribute(
+                        "aria-hidden",
+                        "true"
+                    );
+
+
+                    if (mobileMenuBtn) {
+
+                        mobileMenuBtn.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+                    }
+
+
+                    document.body.style.overflow =
+                        "";
+
+                }
+
+
+                /* ================================================= */
+                /* ================= HAMBURGER ===================== */
+                /* ================================================= */
+
+                if (mobileMenuBtn) {
+
+                    mobileMenuBtn.addEventListener(
+                        "click",
+                        openMobileMenu
+                    );
+
+                }
+
+
+                /* ================================================= */
+                /* ===================== CLOSE ===================== */
+                /* ================================================= */
+
+                if (closeMenu) {
+
+                    closeMenu.addEventListener(
+                        "click",
+                        closeMobileMenu
+                    );
+
+                }
+
+
+                /* ================================================= */
+                /* ==================== BACKDROP =================== */
+                /* ================================================= */
+
+                if (menuBackdrop) {
+
+                    menuBackdrop.addEventListener(
+                        "click",
+                        closeMobileMenu
+                    );
+
+                }
+
+
+                /* ================================================= */
+                /* ================= MOBILE LINKS ================= */
+                /* ================================================= */
+
+                mobileLinks.forEach(
+                    function (link) {
+
+                        link.addEventListener(
+                            "click",
+                            closeMobileMenu
+                        );
+
+                    }
+                );
+
+
+                /* ================================================= */
+                /* ================= ACTIVE PAGE ================== */
+                /* ================================================= */
+
+                let currentPage =
+                    window.location.pathname
+                        .split("/")
+                        .pop()
+                        .toLowerCase();
+
+
+                if (
+                    currentPage === "" ||
+                    currentPage === "/"
+                ) {
+
+                    currentPage =
+                        "index.html";
+
+                }
+
+
+                /* ================= DESKTOP ================= */
+
+                desktopLinks.forEach(
+                    function (link) {
+
+                        const href =
+                            link.getAttribute(
+                                "href"
+                            );
+
+
+                        if (!href) return;
+
+
+                        const linkPage =
+                            href
+                                .split("/")
+                                .pop()
+                                .split("?")[0]
+                                .split("#")[0]
+                                .toLowerCase();
+
+
+                        link.classList.remove(
+                            "active"
+                        );
+
+
+                        if (
+                            linkPage ===
+                            currentPage
+                        ) {
+
+                            link.classList.add(
+                                "active"
+                            );
+
+                        }
+
+                    }
+                );
+
+
+                /* ================= MOBILE ================= */
+
+                mobileLinks.forEach(
+                    function (link) {
+
+                        const href =
+                            link.getAttribute(
+                                "href"
+                            );
+
+
+                        if (!href) return;
+
+
+                        const linkPage =
+                            href
+                                .split("/")
+                                .pop()
+                                .split("?")[0]
+                                .split("#")[0]
+                                .toLowerCase();
+
+
+                        link.classList.remove(
+                            "active"
+                        );
+
+
+                        if (
+                            linkPage ===
+                            currentPage
+                        ) {
+
+                            link.classList.add(
+                                "active"
+                            );
+
+                        }
+
+                    }
+                );
+
+
+                /* ================================================= */
+                /* ===================== ESC ======================= */
+                /* ================================================= */
+
+                document.addEventListener(
+                    "keydown",
+                    function (event) {
+
+                        if (
+                            event.key === "Escape" &&
+                            mobileMenu &&
+                            mobileMenu.classList.contains(
+                                "show"
+                            )
+                        ) {
+
+                            closeMobileMenu();
+
+                        }
+
+                    }
+                );
+
+
+                /* ================================================= */
+                /* ==================== RESIZE ===================== */
+                /* ================================================= */
+
+                window.addEventListener(
+                    "resize",
+                    function () {
+
+                        if (
+                            window.innerWidth >= 768
+                        ) {
+
+                            closeMobileMenu();
+
+                        }
+
+                    }
+                );
+
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>

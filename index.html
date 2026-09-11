@@ -8,407 +8,3052 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script>
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#E0C39A",
-                        "primary-darker": "#C8A97E",
-                        "background-light": "#F9F6F2",
-                        "background-dark": "#121212",
-                        "text-light": "#F9F6F2",
-                        "text-dark": "#333333",
-                        "surface-dark": "#1E1E1E"
-                    },
-                    fontFamily: {
-                        "display": ["Playfair Display", "serif"],
-                        "body": ["Lato", "sans-serif"],
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                },
-            },
-        }
-    </script>
+
+<!-- =====================================================
+     GLOBAL DARK BACKGROUND
+===================================================== -->
+
 <style>
-        .material-symbols-outlined {
-            font-variation-settings:
-                'FILL' 0,
-                'wght' 300,
-                'GRAD' 0,
-                'opsz' 24
+
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        min-height: 100%;
+        background: #121212 !important;
+    }
+
+    body {
+        min-height: 100vh;
+        color: #F9F6F2;
+    }
+
+    main {
+        background: #121212 !important;
+        min-height: calc(100vh - 70px);
+    }
+
+    @media (max-width: 767px) {
+
+        main {
+            min-height: calc(100vh - 68px);
         }
-    </style>
-</head>
-<body class="font-body bg-background-light dark:bg-background-dark text-text-dark dark:text-text-light">
-<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
-<div class="layout-container flex h-full grow flex-col">
-<div class="flex flex-1 justify-center">
-<div class="layout-content-container flex flex-col w-full max-w-[1366px] flex-1">
-<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 px-6 md:px-12 py-5 bg-background-dark/80 backdrop-blur-md">
-<div class="flex items-center gap-4 text-text-light">
-<div class="size-6 text-primary">
-<span class="material-symbols-outlined !text-4xl">photo_camera</span>
-</div>
-<h2 class="text-text-light font-display text-2xl font-bold">KREASI VISUAL</h2>
-</div>
-<!-- NAVBAR -->
-<div class="hidden md:flex flex-1 justify-end">
-  <nav class="flex items-center gap-10">
-    <a class="text-text-light/80 hover:text-primary font-body text-base font-medium tracking-wider transition-colors" href="index.html">BERANDA</a>
 
-    <a class="text-text-light/80 hover:text-primary font-body text-base font-medium tracking-wider transition-colors" href="portfolio.html">PORTOFOLIO</a>
+    }
 
-    <!-- Dropdown -->
-    <!-- <div class="relative"> -->
-  <!-- Checkbox untuk toggle -->
-  <!-- <input type="checkbox" id="menuLayanan" class="peer hidden"> -->
-<!-- 
-  Tombol utama
-  <label for="menuLayanan" class="flex items-center gap-1 cursor-pointer text-text-light/80 hover:text-primary font-body text-base font-medium tracking-wider">
-
-    LAYANAN
-
-    Icon panah (rotasi bekerja)
-    <span class="material-symbols-outlined text-sm inline-block transition-transform duration-300 peer-checked:rotate-180">
-      expand_more
-    </span>
-  </label>
-
-  Dropdown
-  <div class="absolute hidden peer-checked:block bg-black text-white shadow-lg rounded-md py-2 w-48 z-50 border border-white/10 mt-2">
-    <a href="daftar_layanan.html" class="block px-4 py-2 hover:bg-white/10">Wedding</a>
-    <a href="daftar_layanan.html" class="block px-4 py-2 hover:bg-white/10">Prewedding</a>
-    <a href="daftar_layanan.html" class="block px-4 py-2 hover:bg-white/10">Acara Keluarga</a>
-    <a href="daftar_layanan.html" class="block px-4 py-2 hover:bg-white/10">Lamaran</a>
-  </div> -->
-<!-- </div> -->
-
-
-
-    <a class="text-text-light/80 hover:text-primary font-body text-base font-medium tracking-wider transition-colors" href="tentang_kami.html">TENTANG</a>
-    <a class="text-text-light/80 hover:text-primary font-body text-base font-medium tracking-wider transition-colors" href="contact.html">KONTAK</a>
-  </nav>
-</div>
-
-<!-- MOBILE BUTTON -->
-<div class="md:hidden">
-  <button id="mobileMenuBtn" class="flex cursor-pointer items-center justify-center rounded-lg h-10 bg-transparent text-white gap-2 px-2.5">
-    <span class="material-symbols-outlined !text-3xl text-white">menu</span>
-  </button>
-</div>
-
-<!-- MOBILE SIDE MENU -->
-<div id="mobileMenu" class="fixed inset-0 z-50 hidden">
-  <!-- Backdrop -->
-  <div id="menuBackdrop" class="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
-
-  <!-- Panel samping -->
-  <div class="absolute left-0 top-0 h-full w-[280px] bg-background-dark p-5 text-white shadow-xl animate-slideIn">
-    <div class="flex items-center justify-between mb-6">
-      <h2 class="text-xl font-bold">kreasi_visual</h2>
-      <button id="closeMenu" class="p-2 rounded-full hover:bg-white/20">
-        <span class="material-symbols-outlined">close</span>
-      </button>
-    </div>
-
-    <nav class="bg-background-dark">
-      <ul class="flex flex-col gap-3 text-base font-medium">
-
-        <li><a href="index.html" class="flex items-center gap-3 py-2 px-2 rounded-lg hover:bg-black/10"><span class="material-symbols-outlined">home</span> Beranda</a></li>
-
-        <li><a href="portfolio.html" class="flex items-center gap-3 py-2 px-2 rounded-lg hover:bg-black/10"><span class="material-symbols-outlined">photo_camera</span> Portofolio</a></li>
-
-        <!-- Submenu -->
-        <!-- <li> -->
-  <!-- <details class="group w-full">
-    <summary class="flex w-full items-center justify-between gap-3 py-2 px-2 rounded-lg cursor-pointer hover:bg-white/10 select-none"> -->
-
-      <!-- kiri -->
-      <!-- <div class="flex items-center gap-3">
-        <span class="material-symbols-outlined text-white">design_services</span>
-        <span class="text-white">Layanan</span>
-      </div> -->
-
-      <!-- panah -->
-      <!-- <span class="material-symbols-outlined text-white transition-transform duration-300 group-open:rotate-180">
-        expand_more
-      </span>
-
-    </summary> -->
-
-    <!-- SUBMENU FULL DARK -->
-    <!-- <div class="mt-2 ml-3 flex flex-col gap-2 bg-background-dark p-3 rounded-lg shadow-md ">
-      <a href="daftar_layanan.html" class="text-white hover:underline">Wedding</a>
-      <a href="daftar_layanan.html" class="text-white hover:underline">Prewedding</a>
-      <a href="daftar_layanan.html" class="text-white hover:underline">Acara Keluarga</a>
-      <a href="daftar_layanan.html" class="text-white hover:underline">Lamaran</a>
-    </div>
-
-  </details>
-</li> -->
-
-
-        <li><a href="tentang_kami.html" class="flex items-center gap-3 py-2 px-2 rounded-lg hover:bg-black/10"><span class="material-symbols-outlined">info</span> Tentang Kami</a></li>
-
-        <li><a href="contact.html" class="flex items-center gap-3 py-2 px-2 rounded-lg hover:bg-black/10"><span class="material-symbols-outlined">mail</span> Kontak</a></li>
-
-      </ul>
-    </nav>
-  </div>
-</div>
-
-<!-- ANIMASI -->
-<style>
-  @keyframes slideIn {
-    from { transform: translateX(-100%); }
-    to   { transform: translateX(0); }
-  }
-  .animate-slideIn {
-    animation: slideIn .3s ease-out;
-  }
 </style>
 
-<!-- SCRIPT TOGGLE -->
-<script>
-  const btn = document.getElementById('mobileMenuBtn');
-  const menu = document.getElementById('mobileMenu');
-  const closeBtn = document.getElementById('closeMenu');
-  const backdrop = document.getElementById('menuBackdrop');
+<!-- =====================================================
+     NAVBAR KREASI VISUAL
+===================================================== -->
 
-  btn.onclick = () => menu.classList.remove('hidden');
-  closeBtn.onclick = () => menu.classList.add('hidden');
-  backdrop.onclick = () => menu.classList.add('hidden');
-</script>
+<style>
 
+    /* ================================
+       NAVBAR
+    ================================= */
+
+    .main-navbar {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        width: 100%;
+        height: 70px;
+        background: #121212;
+        border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .navbar-container {
+        max-width: 1280px;
+        height: 100%;
+        margin: 0 auto;
+        padding: 0 32px;
+    }
+
+    .navbar-inner {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+
+    /* ================================
+       LOGO
+    ================================= */
+
+    .logo-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #F9F6F2;
+        text-decoration: none;
+    }
+
+    .logo-icon {
+        color: #E0C39A;
+        font-size: 32px;
+    }
+
+    .logo-text {
+        color: #F9F6F2;
+        font-family: "Playfair Display", serif;
+        font-size: 27px;
+        font-weight: 700;
+        white-space: nowrap;
+    }
+
+
+    /* ================================
+       MENU DESKTOP
+    ================================= */
+
+    .desktop-menu {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .desktop-menu a {
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 70px;
+
+        color: rgba(249,246,242,0.78);
+
+        font-family: "Lato", sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+
+        text-decoration: none;
+
+        transition: color 0.25s ease;
+    }
+
+    .desktop-menu a:hover {
+        color: #E0C39A;
+    }
+
+
+    /* ================================
+       MENU YANG SEDANG AKTIF
+    ================================= */
+
+    .desktop-menu a.active {
+        color: #E0C39A;
+        font-weight: 700;
+    }
+
+    .desktop-menu a.active::after {
+        content: "";
+
+        position: absolute;
+
+        left: 0;
+        right: 0;
+        bottom: 15px;
+
+        height: 2px;
+
+        background: #E0C39A;
+    }
+
+
+    /* ================================
+       TOMBOL MENU HP
+       HANYA MUNCUL DI HP
+    ================================= */
+
+    #mobileMenuBtn {
+        display: none;
+
+        width: 44px;
+        height: 44px;
+
+        align-items: center;
+        justify-content: center;
+
+        border: none;
+        outline: none;
+
+        background: transparent;
+
+        color: #F9F6F2;
+
+        cursor: pointer;
+
+        border-radius: 6px;
+    }
+
+    #mobileMenuBtn:hover {
+        color: #E0C39A;
+        background: rgba(224,195,154,0.08);
+    }
+
+    #mobileMenuBtn .material-symbols-outlined {
+        font-size: 30px;
+    }
+
+
+    /* ================================
+       MOBILE MENU
+    ================================= */
+
+    #mobileMenu {
+        position: fixed;
+        inset: 0;
+
+        z-index: 9999;
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        transition:
+            opacity 0.25s ease,
+            visibility 0.25s ease;
+    }
+
+    #mobileMenu.show {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+
+    /* ================================
+       BACKDROP
+    ================================= */
+
+    #menuBackdrop {
+        position: absolute;
+        inset: 0;
+
+        background: rgba(0,0,0,0.75);
+
+        backdrop-filter: blur(3px);
+    }
+
+
+    /* ================================
+       SIDEBAR MENU HP
+    ================================= */
+
+    #mobileSidebar {
+        position: absolute;
+
+        left: 0;
+        top: 0;
+
+        width: 280px;
+        max-width: 85vw;
+
+        height: 100vh;
+
+        background: #121212;
+
+        border-right: 1px solid rgba(255,255,255,0.08);
+
+        box-shadow: 15px 0 40px rgba(0,0,0,0.5);
+
+        transform: translateX(-100%);
+
+        transition: transform 0.3s ease;
+    }
+
+    #mobileMenu.show #mobileSidebar {
+        transform: translateX(0);
+    }
+
+
+    /* ================================
+       HEADER MENU HP
+    ================================= */
+
+    .mobile-header {
+        height: 70px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 0 20px;
+
+        border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .mobile-logo {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .mobile-logo-icon {
+        color: #E0C39A;
+        font-size: 28px;
+    }
+
+    .mobile-logo-text {
+        color: #F9F6F2;
+
+        font-family: "Playfair Display", serif;
+
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+
+    /* ================================
+       TOMBOL X
+    ================================= */
+
+    #closeMenu {
+        width: 42px;
+        height: 42px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border: none;
+        outline: none;
+
+        background: transparent;
+
+        color: #F9F6F2;
+
+        cursor: pointer;
+
+        border-radius: 6px;
+    }
+
+    #closeMenu:hover {
+        color: #E0C39A;
+        background: rgba(224,195,154,0.08);
+    }
+
+
+    /* ================================
+       MENU HP
+    ================================= */
+
+    .mobile-navigation {
+        display: flex;
+        flex-direction: column;
+
+        gap: 5px;
+
+        padding: 20px 14px;
+    }
+
+    .mobile-link {
+        display: flex;
+        align-items: center;
+
+        gap: 15px;
+
+        min-height: 50px;
+
+        padding: 12px 14px;
+
+        color: rgba(249,246,242,0.82);
+
+        font-family: "Lato", sans-serif;
+
+        font-size: 15px;
+        font-weight: 500;
+
+        text-decoration: none;
+
+        border-radius: 7px;
+
+        transition:
+            color 0.25s ease,
+            background 0.25s ease;
+    }
+
+    .mobile-link:hover {
+        color: #E0C39A;
+        background: rgba(224,195,154,0.07);
+    }
+
+
+    /* ================================
+       MENU HP AKTIF
+    ================================= */
+
+    .mobile-link.active {
+        color: #E0C39A;
+
+        background: rgba(224,195,154,0.08);
+
+        font-weight: 700;
+    }
+
+    .mobile-link.active .material-symbols-outlined {
+        color: #E0C39A;
+    }
+
+
+    /* ================================
+       RESPONSIVE
+    ================================= */
+
+    @media (max-width: 767px) {
+
+        .main-navbar {
+            height: 68px;
+        }
+
+        .navbar-container {
+            padding: 0 18px;
+        }
+
+        .navbar-inner {
+            height: 68px;
+        }
+
+        /* Menu desktop hilang */
+
+        .desktop-menu {
+            display: none !important;
+        }
+
+        /* Tombol hamburger muncul */
+
+        #mobileMenuBtn {
+            display: flex !important;
+        }
+
+        .logo-icon {
+            font-size: 29px;
+        }
+
+        .logo-text {
+            font-size: 21px;
+        }
+    }
+
+
+    /* ================================
+       DESKTOP
+    ================================= */
+
+    @media (min-width: 768px) {
+
+        .desktop-menu {
+            display: flex;
+        }
+
+        #mobileMenuBtn {
+            display: none !important;
+        }
+
+        #mobileMenu {
+            display: none !important;
+        }
+    }
+
+</style>
+
+
+<!-- =====================================================
+     NAVBAR HTML
+===================================================== -->
+
+<header class="main-navbar">
+
+    <div class="navbar-container">
+
+        <div class="navbar-inner">
+
+
+            <!-- ================================
+                 LOGO
+            ================================= -->
+
+            <div class="flex items-center gap-3">
+
+                <span class="material-symbols-outlined text-amber-200 text-4xl">
+                    photo_camera
+                </span>
+
+                <span class="font-display text-2xl font-bold">
+                    KREASI VISUAL
+                </span>
+
+            </div>
+
+
+            <!-- ================================
+                 MENU DESKTOP
+            ================================= -->
+
+            <nav class="desktop-menu">
+
+                <a href="index.html">
+                    HOME
+                </a>
+
+                <a href="portfolio.html">
+                    PORTFOLIO
+                </a>
+
+                <a href="tentang_kami.html">
+                    ABOUT
+                </a>
+
+                <a href="contact.html">
+                    CONTACT
+                </a>
+
+            </nav>
+
+
+            <!-- ================================
+                 TOMBOL MENU HP
+            ================================= -->
+
+            <button
+                id="mobileMenuBtn"
+                type="button"
+                aria-label="Buka menu"
+                aria-expanded="false"
+            >
+
+                <span class="material-symbols-outlined">
+                    menu
+                </span>
+
+            </button>
+
+
+        </div>
+
+    </div>
 
 </header>
-<div class="@container">
-<div class="relative w-full h-[85vh] flex items-center justify-center">
-<div class="absolute inset-0 bg-cover bg-center" style='background-image: url("kategori_wedding/upload/rionaldo/1.jpg");'></div>
-<div class="absolute inset-0 bg-black/60"></div>
-<div class="relative z-10 flex flex-col gap-6 text-center px-4">
-<h1 class="text-text-light font-display text-4xl font-bold leading-tight md:text-7xl">Mengabadikan Kisah Cinta Abadi</h1>
-<h2 class="text-text-light/90 font-body text-lg font-normal leading-normal max-w-3xl mx-auto md:text-xl">Kami percaya setiap foto adalah sebuah cerita. Biarkan kami menceritakan kisah Anda melalui lensa yang menangkap emosi, keindahan, dan momen yang tak terlupakan.</h2>
-<div class="flex flex-wrap gap-4 justify-center mt-6">
 
-    <a href="portfolio.html"
-       class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-12 px-8 bg-primary text-background-dark font-body text-base font-bold tracking-wider hover:bg-primary-darker transition-colors">
-        <span class="truncate">LIHAT PORTOFOLIO</span>
+
+<!-- =====================================================
+     MOBILE MENU
+===================================================== -->
+
+<div id="mobileMenu" aria-hidden="true">
+
+
+    <!-- BACKDROP -->
+
+    <div id="menuBackdrop"></div>
+
+
+    <!-- SIDEBAR -->
+
+    <div id="mobileSidebar">
+
+
+        <!-- HEADER -->
+
+        <div class="mobile-header">
+
+            <div class="mobile-logo">
+
+                <span class="material-symbols-outlined mobile-logo-icon">
+                    photo_camera
+                </span>
+
+                <span class="mobile-logo-text">
+                    KREASI VISUAL
+                </span>
+
+            </div>
+
+
+            <!-- CLOSE -->
+
+            <button
+                id="closeMenu"
+                type="button"
+                aria-label="Tutup menu"
+            >
+
+                <span class="material-symbols-outlined">
+                    close
+                </span>
+
+            </button>
+
+        </div>
+
+
+        <!-- MENU -->
+
+        <nav class="mobile-navigation">
+
+            <a
+                href="index.html"
+                class="mobile-link"
+            >
+
+                <span class="material-symbols-outlined">
+                    home
+                </span>
+
+                <span>
+                    HOME
+                </span>
+
+            </a>
+
+
+            <a
+                href="portfolio.html"
+                class="mobile-link"
+            >
+
+                <span class="material-symbols-outlined">
+                    photo_camera
+                </span>
+
+                <span>
+                    PORTFOLIO
+                </span>
+
+            </a>
+
+
+            <a
+                href="tentang_kami.html"
+                class="mobile-link"
+            >
+
+                <span class="material-symbols-outlined">
+                    info
+                </span>
+
+                <span>
+                    ABOUT
+                </span>
+
+            </a>
+
+
+            <a
+                href="contact.html"
+                class="mobile-link"
+            >
+
+                <span class="material-symbols-outlined">
+                    chat
+                </span>
+
+                <span>
+                    CONTACT
+                </span>
+
+            </a>
+
+        </nav>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+
+    /* =========================================
+       ELEMENT
+    ========================================= */
+
+    const mobileMenuBtn =
+        document.getElementById("mobileMenuBtn");
+
+    const mobileMenu =
+        document.getElementById("mobileMenu");
+
+    const closeMenu =
+        document.getElementById("closeMenu");
+
+    const menuBackdrop =
+        document.getElementById("menuBackdrop");
+
+
+    /* =========================================
+       BUKA MENU HP
+    ========================================= */
+
+    function openMobileMenu() {
+
+        if (!mobileMenu) return;
+
+        mobileMenu.classList.add("show");
+
+        mobileMenu.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+
+        if (mobileMenuBtn) {
+
+            mobileMenuBtn.setAttribute(
+                "aria-expanded",
+                "true"
+            );
+
+        }
+
+        document.body.style.overflow = "hidden";
+    }
+
+
+    /* =========================================
+       TUTUP MENU HP
+    ========================================= */
+
+    function closeMobileMenu() {
+
+        if (!mobileMenu) return;
+
+        mobileMenu.classList.remove("show");
+
+        mobileMenu.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+        if (mobileMenuBtn) {
+
+            mobileMenuBtn.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+        }
+
+        document.body.style.overflow = "";
+    }
+
+
+    /* =========================================
+       KLIK TOMBOL HAMBURGER
+    ========================================= */
+
+    if (mobileMenuBtn) {
+
+        mobileMenuBtn.addEventListener(
+            "click",
+            openMobileMenu
+        );
+
+    }
+
+
+    /* =========================================
+       KLIK TOMBOL X
+    ========================================= */
+
+    if (closeMenu) {
+
+        closeMenu.addEventListener(
+            "click",
+            closeMobileMenu
+        );
+
+    }
+
+
+    /* =========================================
+       KLIK BACKDROP
+    ========================================= */
+
+    if (menuBackdrop) {
+
+        menuBackdrop.addEventListener(
+            "click",
+            closeMobileMenu
+        );
+
+    }
+
+
+    /* =========================================
+       MENENTUKAN HALAMAN SEKARANG
+    ========================================= */
+
+    let currentPage =
+        window.location.pathname
+        .split("/")
+        .pop()
+        .toLowerCase();
+
+
+    /*
+       Kalau website dibuka:
+       
+       /
+       
+       maka dianggap sebagai index.html
+    */
+
+    if (
+        currentPage === "" ||
+        currentPage === "/"
+    ) {
+
+        currentPage = "index.html";
+
+    }
+
+
+    /* =========================================
+       ACTIVE DESKTOP
+    ========================================= */
+
+    const desktopLinks =
+        document.querySelectorAll(
+            ".desktop-menu a"
+        );
+
+
+    desktopLinks.forEach(function (link) {
+
+        const href =
+            link.getAttribute("href");
+
+
+        if (!href) return;
+
+
+        const linkPage =
+            href
+            .split("/")
+            .pop()
+            .split("?")[0]
+            .split("#")[0]
+            .toLowerCase();
+
+
+        link.classList.remove("active");
+
+
+        if (
+            linkPage === currentPage
+        ) {
+
+            link.classList.add("active");
+
+        }
+
+    });
+
+
+    /* =========================================
+       ACTIVE MOBILE
+    ========================================= */
+
+    const mobileLinks =
+        document.querySelectorAll(
+            ".mobile-link"
+        );
+
+
+    mobileLinks.forEach(function (link) {
+
+        const href =
+            link.getAttribute("href");
+
+
+        if (!href) return;
+
+
+        const linkPage =
+            href
+            .split("/")
+            .pop()
+            .split("?")[0]
+            .split("#")[0]
+            .toLowerCase();
+
+
+        link.classList.remove("active");
+
+
+        if (
+            linkPage === currentPage
+        ) {
+
+            link.classList.add("active");
+
+        }
+
+
+        /*
+           Setelah memilih halaman,
+           menu HP ditutup.
+        */
+
+        link.addEventListener(
+            "click",
+            closeMobileMenu
+        );
+
+    });
+
+
+    /* =========================================
+       TOMBOL ESC
+    ========================================= */
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (
+                event.key === "Escape" &&
+                mobileMenu &&
+                mobileMenu.classList.contains("show")
+            ) {
+
+                closeMobileMenu();
+
+            }
+
+        }
+    );
+
+
+    /* =========================================
+       KETIKA LAYAR DIPERBESAR
+    ========================================= */
+
+    window.addEventListener(
+        "resize",
+        function () {
+
+            if (window.innerWidth >= 768) {
+
+                closeMobileMenu();
+
+            }
+
+        }
+    );
+
+});
+
+</script>
+<!-- =========================================================
+     BERANDA KREASI VISUAL
+     LETAKKAN SETELAH NAVBAR / MOBILE MENU
+========================================================= -->
+
+<style>
+
+/* =========================================================
+   FONT
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700;900&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+.home-page {
+    background: #121212;
+    color: #F9F6F2;
+    font-family: "Lato", sans-serif;
+    overflow: hidden;
+}
+
+.home-page * {
+    box-sizing: border-box;
+}
+
+.home-page a {
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero-section {
+    position: relative;
+    min-height: calc(100vh - 70px);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #121212;
+}
+
+.hero-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+
+    background-image:
+        url("kategori_wedding/upload/rionaldo/1.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    transform: scale(1.03);
+
+    animation: heroZoom 12s ease-out forwards;
+}
+
+@keyframes heroZoom {
+
+    from {
+        transform: scale(1.08);
+    }
+
+    to {
+        transform: scale(1);
+    }
+
+}
+
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.30),
+            rgba(0,0,0,0.48) 45%,
+            rgba(0,0,0,0.88)
+        );
+}
+
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: min(1100px, 90%);
+
+    text-align: center;
+
+    padding: 80px 20px;
+}
+
+
+.hero-small-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+
+    margin-bottom: 25px;
+
+    color: #E0C39A;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+
+.hero-small-title::before,
+.hero-small-title::after {
+    content: "";
+
+    width: 45px;
+    height: 1px;
+
+    background: #E0C39A;
+}
+
+
+.hero-title {
+    margin: 0 auto;
+
+    max-width: 950px;
+
+    color: #F9F6F2;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(42px, 7vw, 88px);
+
+    line-height: 1.05;
+
+    font-weight: 600;
+
+    letter-spacing: -2px;
+}
+
+
+.hero-title span {
+    color: #E0C39A;
+    font-style: italic;
+}
+
+
+.hero-description {
+    max-width: 700px;
+
+    margin: 28px auto 0;
+
+    color: rgba(249,246,242,0.84);
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    font-weight: 300;
+}
+
+
+.hero-buttons {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 14px;
+
+    flex-wrap: wrap;
+
+    margin-top: 40px;
+}
+
+
+.hero-button {
+    min-width: 190px;
+
+    height: 52px;
+
+    padding: 0 28px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 4px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+
+.hero-button:hover {
+    transform: translateY(-3px);
+}
+
+
+.hero-button-primary {
+    background: #E0C39A;
+    color: #121212;
+}
+
+
+.hero-button-primary:hover {
+    background: #C8A97E;
+}
+
+
+.hero-button-outline {
+    color: #F9F6F2;
+
+    border: 1px solid rgba(224,195,154,0.75);
+
+    background: rgba(0,0,0,0.15);
+
+    backdrop-filter: blur(5px);
+}
+
+
+.hero-button-outline:hover {
+    background: #E0C39A;
+    color: #121212;
+}
+
+
+/* =========================================================
+   SCROLL INDICATOR
+========================================================= */
+
+.hero-scroll {
+    position: absolute;
+
+    z-index: 3;
+
+    bottom: 28px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: rgba(249,246,242,0.65);
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+}
+
+
+.hero-scroll-line {
+    width: 1px;
+    height: 45px;
+
+    background: linear-gradient(
+        to bottom,
+        #E0C39A,
+        transparent
+    );
+
+    animation: scrollLine 2s infinite;
+}
+
+
+@keyframes scrollLine {
+
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.intro-section {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 130px 30px 100px;
+
+    display: grid;
+
+    grid-template-columns: 0.8fr 1.4fr;
+
+    gap: 90px;
+
+    align-items: center;
+}
+
+
+.intro-label {
+    color: #E0C39A;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+}
+
+
+.intro-title {
+    margin: 18px 0 0;
+
+    color: #F9F6F2;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(34px, 4vw, 52px);
+
+    line-height: 1.15;
+
+    font-weight: 500;
+}
+
+
+.intro-title span {
+    color: #E0C39A;
+    font-style: italic;
+}
+
+
+.intro-text {
+    color: rgba(249,246,242,0.68);
+
+    font-size: 16px;
+
+    line-height: 1.9;
+
+    margin: 0 0 20px;
+}
+
+
+.intro-signature {
+    color: #E0C39A;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 24px;
+
+    font-style: italic;
+
+    margin-top: 30px;
+}
+
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.section-header {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 30px 30px 45px;
+
+    text-align: center;
+}
+
+
+.section-label {
+    display: block;
+
+    margin-bottom: 14px;
+
+    color: #E0C39A;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+}
+
+
+.section-title {
+    margin: 0;
+
+    color: #F9F6F2;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(36px, 5vw, 58px);
+
+    line-height: 1.15;
+
+    font-weight: 500;
+}
+
+
+.section-description {
+    max-width: 650px;
+
+    margin: 18px auto 0;
+
+    color: rgba(249,246,242,0.60);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   MASONRY GALLERY
+========================================================= */
+
+.gallery-wrapper {
+    width: min(1400px, 94%);
+
+    margin: auto;
+
+    padding-bottom: 130px;
+}
+
+
+.gallery-grid {
+    columns: 4 260px;
+
+    column-gap: 10px;
+}
+
+
+.gallery-item {
+    position: relative;
+
+    display: block;
+
+    width: 100%;
+
+    margin-bottom: 10px;
+
+    overflow: hidden;
+
+    break-inside: avoid;
+
+    background: #1E1E1E;
+
+    cursor: pointer;
+}
+
+
+.gallery-item img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.7s cubic-bezier(.2,.7,.2,1),
+        filter 0.7s ease;
+}
+
+
+.gallery-item:hover img {
+    transform: scale(1.06);
+
+    filter: brightness(0.72);
+}
+
+
+/* =========================================================
+   GALLERY OVERLAY
+========================================================= */
+
+.gallery-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    padding: 25px;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,0.85),
+            rgba(0,0,0,0.05) 65%
+        );
+
+    opacity: 0;
+
+    transition: opacity 0.4s ease;
+}
+
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+
+.gallery-category {
+    color: #E0C39A;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 8px;
+}
+
+
+.gallery-title {
+    color: #F9F6F2;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 25px;
+
+    line-height: 1.2;
+}
+
+
+.gallery-arrow {
+    position: absolute;
+
+    top: 20px;
+    right: 20px;
+
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255,255,255,0.4);
+
+    border-radius: 50%;
+
+    color: #F9F6F2;
+
+    backdrop-filter: blur(5px);
+
+    transform: translateY(-10px);
+
+    opacity: 0;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.gallery-item:hover .gallery-arrow {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   VIEW ALL BUTTON
+========================================================= */
+
+.gallery-button-wrapper {
+    text-align: center;
+
+    margin-top: 45px;
+}
+
+
+.gallery-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    min-width: 220px;
+
+    height: 52px;
+
+    padding: 0 28px;
+
+    color: #E0C39A;
+
+    border: 1px solid rgba(224,195,154,0.6);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.gallery-button:hover {
+    background: #E0C39A;
+
+    color: #121212;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   CATEGORY SECTION
+========================================================= */
+
+.categories-section {
+    padding: 110px 30px;
+
+    background: #181818;
+}
+
+
+.categories-container {
+    max-width: 1200px;
+
+    margin: auto;
+}
+
+
+.category-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 12px;
+
+    margin-top: 55px;
+}
+
+
+.category-card {
+    position: relative;
+
+    min-height: 500px;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    background: #1E1E1E;
+}
+
+
+.category-card img {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.7s ease,
+        filter 0.7s ease;
+}
+
+
+.category-card:hover img {
+    transform: scale(1.08);
+
+    filter: brightness(0.7);
+}
+
+
+.category-card::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,0.85),
+            transparent 65%
+        );
+}
+
+
+.category-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    padding: 35px;
+}
+
+
+.category-number {
+    color: #E0C39A;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 12px;
+}
+
+
+.category-title {
+    color: white;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 34px;
+
+    margin: 0 0 10px;
+}
+
+
+.category-description {
+    color: rgba(255,255,255,0.7);
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    max-width: 280px;
+}
+
+
+.category-link {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 20px;
+
+    color: #E0C39A;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   PHILOSOPHY
+========================================================= */
+
+.philosophy-section {
+    max-width: 1000px;
+
+    margin: auto;
+
+    padding: 140px 30px;
+
+    text-align: center;
+}
+
+
+.philosophy-icon {
+    color: #E0C39A;
+
+    font-size: 42px;
+
+    margin-bottom: 30px;
+}
+
+
+.philosophy-title {
+    margin: 0;
+
+    color: #F9F6F2;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(32px, 5vw, 58px);
+
+    line-height: 1.2;
+
+    font-weight: 400;
+}
+
+
+.philosophy-title em {
+    color: #E0C39A;
+}
+
+
+.philosophy-text {
+    max-width: 700px;
+
+    margin: 28px auto 0;
+
+    color: rgba(249,246,242,0.62);
+
+    font-size: 16px;
+
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta-section {
+    width: min(1200px, 92%);
+
+    margin: 0 auto 120px;
+
+    padding: 90px 30px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    text-align: center;
+
+    border: 1px solid rgba(224,195,154,0.18);
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(224,195,154,0.14),
+            rgba(224,195,154,0.03) 45%,
+            transparent 75%
+        );
+}
+
+
+.cta-section::before {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    border: 1px solid rgba(224,195,154,0.15);
+
+    border-radius: 50%;
+
+    top: -150px;
+    left: -150px;
+}
+
+
+.cta-section::after {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    border: 1px solid rgba(224,195,154,0.15);
+
+    border-radius: 50%;
+
+    bottom: -150px;
+    right: -150px;
+}
+
+
+.cta-label {
+    position: relative;
+
+    z-index: 2;
+
+    color: #E0C39A;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+}
+
+
+.cta-title {
+    position: relative;
+
+    z-index: 2;
+
+    margin: 20px auto 0;
+
+    max-width: 800px;
+
+    color: #F9F6F2;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(35px, 5vw, 58px);
+
+    line-height: 1.15;
+
+    font-weight: 500;
+}
+
+
+.cta-text {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 650px;
+
+    margin: 20px auto 0;
+
+    color: rgba(249,246,242,0.65);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+.cta-button {
+    position: relative;
+
+    z-index: 2;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    height: 52px;
+
+    min-width: 220px;
+
+    margin-top: 35px;
+
+    padding: 0 30px;
+
+    background: #E0C39A;
+
+    color: #121212;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.cta-button:hover {
+    background: #C8A97E;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.home-footer {
+    border-top: 1px solid rgba(255,255,255,0.08);
+
+    padding: 45px 30px;
+
+    background: #121212;
+}
+
+
+.footer-container {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+.footer-brand {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: #F9F6F2;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 22px;
+
+    font-weight: 600;
+}
+
+
+.footer-brand span {
+    color: #E0C39A;
+}
+
+
+.footer-copy {
+    color: rgba(249,246,242,0.4);
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .intro-section {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        padding-top: 90px;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .category-card {
+        min-height: 430px;
+    }
+
+    .gallery-grid {
+        columns: 2 180px;
+    }
+
+}
+
+
+@media (max-width: 767px) {
+
+    .hero-section {
+        min-height: calc(100vh - 68px);
+
+        min-height: 650px;
+    }
+
+
+    .hero-content {
+        padding: 70px 10px;
+    }
+
+
+    .hero-small-title {
+        font-size: 9px;
+
+        letter-spacing: 3px;
+    }
+
+
+    .hero-small-title::before,
+    .hero-small-title::after {
+        width: 25px;
+    }
+
+
+    .hero-title {
+        font-size: 43px;
+
+        letter-spacing: -1px;
+    }
+
+
+    .hero-description {
+        font-size: 14px;
+
+        line-height: 1.7;
+    }
+
+
+    .hero-buttons {
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+
+    .hero-button {
+        width: 100%;
+
+        max-width: 280px;
+    }
+
+
+    .hero-scroll {
+        display: none;
+    }
+
+
+    .intro-section {
+        padding: 85px 22px 75px;
+
+        gap: 30px;
+    }
+
+
+    .intro-title {
+        font-size: 35px;
+    }
+
+
+    .intro-text {
+        font-size: 15px;
+    }
+
+
+    .section-header {
+        padding: 20px 20px 35px;
+    }
+
+
+    .section-title {
+        font-size: 38px;
+    }
+
+
+    .gallery-wrapper {
+        width: 94%;
+
+        padding-bottom: 90px;
+    }
+
+
+    .gallery-grid {
+        columns: 2 150px;
+
+        column-gap: 6px;
+    }
+
+
+    .gallery-item {
+        margin-bottom: 6px;
+    }
+
+
+    .gallery-overlay {
+        padding: 15px;
+
+        opacity: 1;
+
+        background:
+            linear-gradient(
+                to top,
+                rgba(0,0,0,0.72),
+                transparent 70%
+            );
+    }
+
+
+    .gallery-title {
+        font-size: 18px;
+    }
+
+
+    .gallery-category {
+        font-size: 8px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .gallery-arrow {
+        display: none;
+    }
+
+
+    .categories-section {
+        padding: 80px 20px;
+    }
+
+
+    .category-grid {
+        margin-top: 35px;
+    }
+
+
+    .category-card {
+        min-height: 400px;
+    }
+
+
+    .category-content {
+        padding: 25px;
+    }
+
+
+    .category-title {
+        font-size: 30px;
+    }
+
+
+    .philosophy-section {
+        padding: 90px 22px;
+    }
+
+
+    .philosophy-title {
+        font-size: 35px;
+    }
+
+
+    .philosophy-text {
+        font-size: 14px;
+    }
+
+
+    .cta-section {
+        margin-bottom: 80px;
+
+        padding: 70px 22px;
+    }
+
+
+    .cta-title {
+        font-size: 36px;
+    }
+
+
+    .footer-container {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .hero-image {
+        animation: none;
+    }
+
+    .hero-scroll-line {
+        animation: none;
+    }
+
+    .gallery-item img,
+    .category-card img,
+    .hero-button,
+    .gallery-button,
+    .cta-button {
+        transition: none;
+    }
+
+}
+
+</style>
+
+
+<!-- =========================================================
+     HOME
+========================================================= -->
+
+<main class="home-page">
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero-section">
+
+    <div class="hero-image"></div>
+
+    <div class="hero-overlay"></div>
+
+
+    <div class="hero-content">
+
+        <div class="hero-small-title">
+            KREASI VISUAL
+        </div>
+
+
+        <h1 class="hero-title">
+
+            Mengabadikan
+            <span>cerita</span>
+            dalam setiap frame.
+
+        </h1>
+
+
+        <p class="hero-description">
+
+            Kami menangkap bukan hanya bagaimana sebuah momen
+            terlihat, tetapi juga bagaimana momen tersebut
+            terasa — hangat, tulus, dan tak terlupakan.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a
+                href="portfolio.html"
+                class="hero-button hero-button-primary"
+            >
+                EXPLORE PORTFOLIO
+            </a>
+
+
+            <a
+                href="contact.html"
+                class="hero-button hero-button-outline"
+            >
+                LET'S WORK TOGETHER
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-scroll">
+
+        <span>SCROLL</span>
+
+        <div class="hero-scroll-line"></div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     INTRO
+========================================================= -->
+
+<section class="intro-section">
+
+    <div>
+
+        <span class="intro-label">
+            OUR PHILOSOPHY
+        </span>
+
+
+        <h2 class="intro-title">
+
+            Karena setiap
+            <span>momen</span>
+            punya cerita.
+
+        </h2>
+
+    </div>
+
+
+    <div>
+
+        <p class="intro-text">
+
+            Di KREASI VISUAL, kami percaya bahwa foto terbaik
+            bukan hanya tentang pose yang sempurna. Foto terbaik
+            adalah foto yang mampu membawa Anda kembali kepada
+            perasaan yang pernah Anda rasakan.
+
+        </p>
+
+
+        <p class="intro-text">
+
+            Senyum kecil, tatapan penuh arti, tangan yang saling
+            menggenggam, hingga tawa yang terjadi secara spontan —
+            semua detail kecil itulah yang membuat sebuah cerita
+            menjadi berharga.
+
+        </p>
+
+
+        <div class="intro-signature">
+            Capturing moments. Creating memories.
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     SELECTED WORKS
+========================================================= -->
+
+<section>
+
+    <div class="section-header">
+
+        <span class="section-label">
+            SELECTED WORKS
+        </span>
+
+
+        <h2 class="section-title">
+            Cerita yang telah kami abadikan
+        </h2>
+
+
+        <p class="section-description">
+
+            Beberapa momen pilihan dari perjalanan kami
+            dalam mengabadikan cinta, kebahagiaan,
+            dan cerita yang tidak akan terulang.
+
+        </p>
+
+    </div>
+
+
+    <div class="gallery-wrapper">
+
+        <div
+            id="randomGallery"
+            class="gallery-grid"
+        ></div>
+
+
+        <div class="gallery-button-wrapper">
+
+            <a
+                href="portfolio.html"
+                class="gallery-button"
+            >
+
+                VIEW FULL PORTFOLIO
+
+                <span class="material-symbols-outlined">
+                    arrow_forward
+                </span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CATEGORY
+========================================================= -->
+
+<section class="categories-section">
+
+    <div class="categories-container">
+
+
+        <div class="section-header">
+
+            <span class="section-label">
+                WHAT WE CAPTURE
+            </span>
+
+
+            <h2 class="section-title">
+                Setiap cerita punya cara
+                untuk dikenang.
+            </h2>
+
+
+            <p class="section-description">
+
+                Dari hari pernikahan hingga perjalanan
+                menuju hari istimewa, kami hadir untuk
+                menceritakan setiap bagiannya.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="category-grid">
+
+
+            <!-- WEDDING -->
+
+            <a
+                href="portfolio.html"
+                class="category-card"
+            >
+
+                <img
+                    src="kategori_wedding/upload/rionaldo/1.jpg"
+                    alt="Wedding Photography"
+                    loading="lazy"
+                >
+
+
+                <div class="category-content">
+
+                    <div class="category-number">
+                        01
+                    </div>
+
+
+                    <h3 class="category-title">
+                        Wedding
+                    </h3>
+
+
+                    <p class="category-description">
+
+                        Mengabadikan hari besar Anda
+                        dengan foto yang hangat,
+                        elegan, dan penuh emosi.
+
+                    </p>
+
+
+                    <span class="category-link">
+
+                        VIEW WEDDING
+
+                        <span class="material-symbols-outlined">
+                            arrow_forward
+                        </span>
+
+                    </span>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- ENGAGEMENT -->
+
+            <a
+                href="portfolio.html"
+                class="category-card"
+            >
+
+                <img
+                    src="kategori_lamaran/upload/fariz/6.jpg"
+                    alt="Engagement Photography"
+                    loading="lazy"
+                >
+
+
+                <div class="category-content">
+
+                    <div class="category-number">
+                        02
+                    </div>
+
+
+                    <h3 class="category-title">
+                        Engagement
+                    </h3>
+
+
+                    <p class="category-description">
+
+                        Cerita tentang dua orang yang
+                        memutuskan untuk berjalan
+                        menuju masa depan bersama.
+
+                    </p>
+
+
+                    <span class="category-link">
+
+                        VIEW ENGAGEMENT
+
+                        <span class="material-symbols-outlined">
+                            arrow_forward
+                        </span>
+
+                    </span>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- PREWEDDING -->
+
+            <a
+                href="portfolio.html"
+                class="category-card"
+            >
+
+                <img
+                    src="kategori_preweding/upload/esa/12.jpg"
+                    alt="Prewedding Photography"
+                    loading="lazy"
+                >
+
+
+                <div class="category-content">
+
+                    <div class="category-number">
+                        03
+                    </div>
+
+
+                    <h3 class="category-title">
+                        Prewedding
+                    </h3>
+
+
+                    <p class="category-description">
+
+                        Menyimpan kisah sebelum hari
+                        besar melalui visual yang
+                        personal dan timeless.
+
+                    </p>
+
+
+                    <span class="category-link">
+
+                        VIEW PREWEDDING
+
+                        <span class="material-symbols-outlined">
+                            arrow_forward
+                        </span>
+
+                    </span>
+
+                </div>
+
+            </a>
+
+            <a
+                href="portfolio.html"
+                class="category-card"
+            >
+
+                <img
+                    src="kategori_event/upload/modeling/1.jpg"
+                    alt="Engagement Photography"
+                    loading="lazy"
+                >
+
+
+                <div class="category-content">
+
+                    <div class="category-number">
+                        04
+                    </div>
+
+
+                    <h3 class="category-title">
+                        JUNIOR MODEL
+                    </h3>
+
+
+                    <p class="category-description">
+                        Potret penuh gaya dan ekspresi dari para
+                        junior model yang tampil percaya diri.
+                    </p>
+
+
+                    <span class="category-link">
+
+                        VIEW JUNIOR MODEL
+
+                        <span class="material-symbols-outlined">
+                            arrow_forward
+                        </span>
+
+                    </span>
+
+                </div>
+
+            </a>
+
+            
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     PHILOSOPHY
+========================================================= -->
+
+<section class="philosophy-section">
+
+    <span class="material-symbols-outlined philosophy-icon">
+        format_quote
+    </span>
+
+
+    <h2 class="philosophy-title">
+
+        "A photograph is more than
+        an image. It is a piece of
+        <em>time</em> that stays with us."
+
+    </h2>
+
+
+    <p class="philosophy-text">
+
+        Waktu terus berjalan dan momen tidak pernah
+        kembali dengan cara yang sama. Karena itu,
+        kami ingin setiap foto yang kami hasilkan
+        menjadi sesuatu yang tetap memiliki arti,
+        bahkan bertahun-tahun setelah hari itu berlalu.
+
+    </p>
+
+</section>
+
+
+
+<!-- =========================================================
+     CTA
+========================================================= -->
+
+<section class="cta-section">
+
+    <span class="cta-label">
+        LET'S CREATE SOMETHING BEAUTIFUL
+    </span>
+
+
+    <h2 class="cta-title">
+
+        Cerita Anda layak
+        untuk diabadikan.
+
+    </h2>
+
+
+    <p class="cta-text">
+
+        Mari ceritakan kepada kami tentang momen yang
+        ingin Anda abadikan. Kami akan membantu
+        mengubahnya menjadi kenangan visual yang
+        bisa Anda simpan selamanya.
+
+    </p>
+
+
+    <a
+        href="contact.html"
+        class="cta-button"
+    >
+        START YOUR STORY
     </a>
 
-    <a href="contact.html"
-       class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-12 px-8 bg-transparent text-text-light font-body text-base font-bold tracking-wider border border-primary hover:bg-primary hover:text-background-dark transition-colors">
-        <span class="truncate">HUBUNGI KAMI</span>
-    </a>
-
-</div>
-</div>
-</div>
-</div>
-<div class="px-4 md:px-12 py-20 md:py-28 text-center">
-<h2 class="font-display text-3xl md:text-5xl font-bold leading-tight tracking-[-0.015em] mb-4">Karya Pilihan Kami</h2>
-<p class="text-text-dark/70 dark:text-text-light/70 max-w-2xl mx-auto text-lg">Setiap pernikahan adalah unik. Inilah sekilas cara kami merayakan keunikan tersebut dalam bingkai yang indah.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-1 px-4 md:px-12 -mt-16">
-<a class="relative aspect-[3/4] group overflow-hidden" href="kategori_wedding/rionaldo_silvia.html">
-<img alt="A portrait of a bride and groom during their wedding ceremony." class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="kategori_wedding/upload/rionaldo/1.jpg"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-<div class="absolute bottom-0 left-0 p-6">
-<p class="text-white font-display text-2xl transform transition-transform duration-300 group-hover:-translate-y-2">Rionaldo &amp; Silvia</p>
-<span class="text-primary text-sm font-body tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-300">LIHAT GALERI</span>
-</div>
-</a>
-<a class="relative aspect-[3/4] group overflow-hidden" href="kategori_wedding/arif_novita.html">
-<img alt="A couple posing for a pre-wedding photo shoot on a scenic beach." class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="kategori_wedding/upload/novita/28.jpg"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-<div class="absolute bottom-0 left-0 p-6">
-<p class="text-white font-display text-2xl transform transition-transform duration-300 group-hover:-translate-y-2">Arif &amp; Novita</p>
-<span class="text-primary text-sm font-body tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-300">LIHAT GALERI</span>
-</div>
-</a>
-<a class="relative aspect-[3/4] group overflow-hidden" href="kategori_lamaran/fariz_citra.html">
-<img alt="Detailed shot of traditional Javanese wedding attire." class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="kategori_lamaran/upload/fariz/6.jpg"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-<div class="absolute bottom-0 left-0 p-6">
-<p class="text-white font-display text-2xl transform transition-transform duration-300 group-hover:-translate-y-2">Engagement Fariz &amp; Citra</p>
-<span class="text-primary text-sm font-body tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-300">LIHAT GALERI</span>
-</div>
-</a>
-<a class="relative aspect-[3/4] group overflow-hidden" href="kategori_preweding/prewedding.html">
-<img alt="Candid photo of guests dancing at a modern wedding reception." class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="kategori_preweding/upload/esa/12.jpg"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-<div class="absolute bottom-0 left-0 p-6">
-<p class="text-white font-display text-2xl transform transition-transform duration-300 group-hover:-translate-y-2">Prewedding</p>
-<span class="text-primary text-sm font-body tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-300">LIHAT GALERI</span>
-</div>
-</a>
-</div>
-
-<!-- <div class="py-20 md:py-28 px-4 md:px-12">
-<div class="max-w-7xl mx-auto text-center">
-<h2 class="font-display text-3xl md:text-5xl font-bold leading-tight tracking-[-0.015em] mb-4">Paket Spesial Untuk Momen Anda</h2>
-<p class="text-text-dark/70 dark:text-text-light/70 max-w-2xl mx-auto text-lg mb-12">Pilih paket yang paling sesuai untuk merayakan hari istimewa Anda. Dapatkan penawaran terbaik dengan bundling eksklusif dari kami.</p>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-<div class="relative rounded-lg overflow-hidden group min-h-[550px] flex flex-col justify-end text-white">
-<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC-bLarW8WF0h_uYIOI_1tpp5jH8gnpYLulhHVuvZ3TlocwfJARrZmOQN8_vXX63MMAsWY8pw3u2OaNdtua5JFwZ2eM7M-dpT9dYwuizsKL2FnvrDOPoopY9FqnW1RPGSozhoVfFvHLMmC7-6rB1nZ43PJzOMwNBM7d92I6YkiCDpOj_WtW6gyuVsID0L7vU2ZKfDuk5xWIJtGBN6Xi3Bcv-A7qboB6GD9j5byqRuWmuYd7ZmGrnx0mB6f831lNulv2V5uOo3n345I");'></div>
-<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent"></div>
-<div class="relative z-10 p-8 flex flex-col h-full">
-<div class="flex-grow">
-<h3 class="font-display text-3xl font-bold mb-4 text-shadow">Paket Intimate</h3>
-<p class="text-5xl font-bold font-display text-primary mb-6 text-shadow-md">Rp 5.9Jt</p>
-<ul class="space-y-3 text-text-light/90">
-<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span>4 Jam Sesi Foto</li>
-<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span>1 Fotografer Profesional</li>
-<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span>100 Foto Pilihan (Edited)</li>
-<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span>Galeri Online Pribadi</li>
-</ul>
-</div>
-<button class="w-full mt-8 flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-12 px-8 bg-white/10 text-white font-body text-base font-bold tracking-wider border border-white/50 backdrop-blur-sm hover:bg-white hover:text-black transition-colors">
-<span class="truncate">PILIH PAKET</span>
-</button>
-</div>
-</div>
-<div class="relative rounded-lg overflow-hidden group min-h-[550px] flex flex-col justify-end text-white scale-105 shadow-2xl shadow-primary/30">
-<div class="absolute top-0 right-0 bg-primary text-background-dark font-bold text-sm py-1.5 px-6 transform rotate-45 translate-x-8 translate-y-5 z-20">POPULER</div>
-<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBY0u_jO-rrhyvftQXL_b5s1fnHal6TYUkyah3x-GMPZ80tl3sj6nEl7JtwWBTmtl01nyUYZlA9jVZbvndxn7z61qcCtpcdwuJbGfNU0z73P6gY1Yce6Qp8VIS374cFOHWhFEmlwAS-jatVaTrh9axyxxW85ZmV2yGF_DrcQfKXHpDVC1jkQWxrXuzB3FzG0ozTFchQ-wqe4-SyM6QNnhzRWsqCjQNqWc1F6L2TT7uOkSUmmtuD65NnZtGO33qF1t4BrVJNtvEkHW4");'></div>
-<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent"></div>
-<div class="relative z-10 p-8 flex flex-col h-full">
-<div class="flex-grow">
-<h3 class="font-display text-3xl font-bold mb-4 text-shadow">Paket Abadi</h3>
-<p class="text-5xl font-bold font-display text-primary mb-6 text-shadow-md">Rp 12.5Jt</p>
-<ul class="space-y-3 text-text-light/90">
-<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span>8 Jam Sesi Foto &amp; Video</li>
-<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span>2 Fotografer &amp; 1 Videografer</li>
-<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span>300 Foto Pilihan (Edited)</li>
-<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span>Video Highlight 3-5 Menit</li>
-<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span>Album Cetak Eksklusif</li>
-</ul>
-</div>
-<button class="w-full mt-8 flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-12 px-8 bg-primary text-background-dark font-body text-base font-bold tracking-wider hover:bg-primary-darker transition-colors">
-<span class="truncate">PILIH PAKET</span>
-</button>
-</div>
-</div>
-<div class="relative rounded-lg overflow-hidden group min-h-[550px] flex flex-col justify-end text-white">
-<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBTkuCQoUjJbm6uCwwzfWPFSk-N2-SfWLAQtn1OOwLhhkJw7zgzcMHkXYI0y-e9AXGm0v22s42ziqx7imUiBYPKzz2b5wcOywY5ihuIXeLkfV-8KTfL_YkazpQTHyqQRIUFYzMLk77UtwdVBF41cE41OHAd-hOOLAOStvkI5HE_tzkkUs8nXWSSELwjaOzGXXHzbLzmlHQRWxL0zaI9gdOcsXhetY95WeDQPwMEBIRzt2iNyKuPAHMz5cz2qgstCuwDn73iRr5dTUk");'></div>
-<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent"></div>
-<div class="relative z-10 p-8 flex flex-col h-full">
-<div class="flex-grow">
-<h3 class="font-display text-3xl font-bold mb-4 text-shadow">Paket Lengkap</h3>
-<p class="text-5xl font-bold font-display text-primary mb-6 text-shadow-md">Rp 18.9Jt</p>
-<ul class="space-y-3 text-text-light/90">
-<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span>Sesi Pre-wedding</li>
-<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span>Liputan Hari Pernikahan Penuh</li>
-<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span>Tim Lengkap (Foto &amp; Video)</li>
-<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span>Semua File Foto Diberikan</li>
-<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span>Video Sinematik 10 Menit</li>
-</ul>
-</div>
-<button class="w-full mt-8 flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-12 px-8 bg-white/10 text-white font-body text-base font-bold tracking-wider border border-white/50 backdrop-blur-sm hover:bg-white hover:text-black transition-colors">
-<span class="truncate">PILIH PAKET</span>
-</button>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-<div class="py-20 md:py-28 px-4 md:px-12 bg-background-light dark:bg-surface-dark mt-20">
-<div class="max-w-7xl mx-auto text-center">
-<h2 class="font-display text-3xl md:text-5xl font-bold leading-tight tracking-[-0.015em] mb-12">Dari Klien Kami yang Bahagia</h2>
-<div class="relative w-full max-w-5xl mx-auto">
-<div class="overflow-hidden">
-<div class="flex transition-transform duration-500 ease-in-out" style="transform: translateX(-33.3333%);">
-<div class="w-full flex-shrink-0 md:w-1/3 px-6">
-<div class="flex flex-col items-center h-full">
-<span class="material-symbols-outlined !text-6xl text-primary/40">format_quote</span>
-<p class="text-text-dark/80 dark:text-text-light/80 italic font-display text-xl leading-relaxed mt-4 flex-grow">"Fotografernya sangat berbakat! Mereka bisa menangkap momen-momen kecil yang justru sangat berarti. Komunikasinya juga sangat baik dari awal hingga akhir. Sangat puas!"</p>
-<p class="text-primary font-body font-bold mt-6 tracking-widest">- DIAN &amp; RIZKY -</p>
-</div>
-</div>
-<div class="w-full flex-shrink-0 md:w-1/3 px-6">
-<div class="flex flex-col items-center h-full">
-<span class="material-symbols-outlined !text-6xl text-primary/40">format_quote</span>
-<p class="text-text-dark/80 dark:text-text-light/80 italic font-display text-xl leading-relaxed mt-4 flex-grow">"Hasil fotonya sungguh melebihi ekspektasi! Setiap momen berharga terekam dengan begitu indah dan penuh emosi. Profesional, kreatif, dan sangat bersahabat. Kami sangat merekomendasikan Lensa Cerita!"</p>
-<p class="text-primary font-body font-bold mt-6 tracking-widest">- AMANDA &amp; BIMA -</p>
-</div>
-</div>
-<div class="w-full flex-shrink-0 md:w-1/3 px-6">
-<div class="flex flex-col items-center h-full">
-<span class="material-symbols-outlined !text-6xl text-primary/40">format_quote</span>
-<p class="text-text-dark/80 dark:text-text-light/80 italic font-display text-xl leading-relaxed mt-4 flex-grow">"Tim Lensa Cerita membuat kami merasa sangat nyaman di depan kamera. Mereka berhasil menangkap kepribadian kami dalam setiap foto. Kenangan yang tak ternilai harganya!"</p>
-<p class="text-primary font-body font-bold mt-6 tracking-widest">- RINA &amp; ADI -</p>
-</div>
-</div>
-<div class="w-full flex-shrink-0 md:w-1/3 px-6">
-<div class="flex flex-col items-center h-full">
-<span class="material-symbols-outlined !text-6xl text-primary/40">format_quote</span>
-<p class="text-text-dark/80 dark:text-text-light/80 italic font-display text-xl leading-relaxed mt-4 flex-grow">"Album pernikahan kami seperti sebuah mahakarya. Komposisi dan penceritaannya luar biasa. Terima kasih telah mengabadikan hari terpenting kami dengan begitu sempurna."</p>
-<p class="text-primary font-body font-bold mt-6 tracking-widest">- LESTARI &amp; JOKO -</p>
-</div>
-</div>
-<div class="w-full flex-shrink-0 md:w-1/3 px-6">
-<div class="flex flex-col items-center h-full">
-<span class="material-symbols-outlined !text-6xl text-primary/40">format_quote</span>
-<p class="text-text-dark/80 dark:text-text-light/80 italic font-display text-xl leading-relaxed mt-4 flex-grow">"Sangat profesional dan hasilnya luar biasa. Mereka tahu sudut terbaik dan pencahayaan yang sempurna. Kami tidak bisa lebih bahagia lagi dengan foto-foto pernikahan kami."</p>
-<p class="text-primary font-body font-bold mt-6 tracking-widest">- SINTA &amp; AGUS -</p>
-</div>
-</div>
-</div>
-</div>
-<button class="absolute top-1/2 left-0 md:-left-12 transform -translate-y-1/2 bg-transparent text-primary/50 hover:text-primary transition-colors">
-<span class="material-symbols-outlined !text-5xl">arrow_back_ios</span>
-</button>
-<button class="absolute top-1/2 right-0 md:-right-12 transform -translate-y-1/2 bg-transparent text-primary/50 hover:text-primary transition-colors">
-<span class="material-symbols-outlined !text-5xl">arrow_forward_ios</span>
-</button>
-</div>
-<div class="flex justify-center gap-2 mt-12">
-<button class="w-2.5 h-2.5 rounded-full bg-primary/30"></button>
-<button class="w-2.5 h-2.5 rounded-full bg-primary"></button>
-<button class="w-2.5 h-2.5 rounded-full bg-primary/30"></button>
-<button class="w-2.5 h-2.5 rounded-full bg-primary/30"></button>
-<button class="w-2.5 h-2.5 rounded-full bg-primary/30"></button>
-</div>
-</div>
-</div> -->
-<br>
-<div class="bg-primary/10 mt-0 mb-20 md:mt-0 md:mb-28 p-10 md:p-20 mx-4 md:mx-12 text-center rounded-lg">
-<h2 class="font-display text-3xl md:text-4xl font-bold leading-tight tracking-[-0.015em]">Siap Merangkai Cerita Anda?</h2>
-<p class="text-text-dark/70 dark:text-text-light/70 mt-4 max-w-2xl mx-auto text-lg">Mari kita diskusikan bagaimana kami bisa menjadi bagian dari hari istimewa Anda. Jadwalkan konsultasi gratis untuk membahas ide dan visi Anda.</p>
-<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-12 px-8 bg-primary text-background-dark font-body text-base font-bold tracking-wider hover:bg-primary-darker transition-colors mx-auto mt-8">
-<span class="truncate">JADWALKAN KONSULTASI</span>
-</button>
-</div>
-<!-- <footer class="border-t border-solid border-white/10 px-6 md:px-12 py-10 bg-background-dark text-text-light/70">
-<div class="flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
-<div class="flex items-center gap-4">
-<div class="size-6 text-primary">
-<span class="material-symbols-outlined !text-4xl">photo_camera</span>
-</div>
-<h2 class="text-text-light font-display text-2xl font-bold">KREASI VISUAL</h2>
-</div>
-<p class="font-body text-sm">© 2024 Lensa Cerita. Hak Cipta Dilindungi.</p>
-<div class="flex gap-5">
-<a class="text-text-light/70 hover:text-primary transition-colors" href="#"><svg class="feather feather-instagram" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg></a>
-<a class="text-text-light/70 hover:text-primary transition-colors" href="#"><svg class="feather feather-facebook" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
-<a class="text-text-light/70 hover:text-primary transition-colors" href="#"><svg class="feather feather-twitter" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a>
-</div>
-</div>
-</footer> -->
-</div>
-</div>
-</div>
-</div>
+</section>
 
 
 
+<!-- =========================================================
+     FOOTER
+========================================================= -->
 
-</body></html>
+<footer class="home-footer">
+
+    <div class="footer-container">
+
+
+        <div class="footer-brand">
+
+            <span class="material-symbols-outlined">
+                photo_camera
+            </span>
+
+            KREASI VISUAL
+
+        </div>
+
+
+        <div class="footer-copy">
+
+            © 2026 KREASI VISUAL.
+            All Rights Reserved.
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     RANDOM PHOTO GALLERY
+========================================================= -->
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+
+        /*
+        ======================================================
+        DAFTAR FOTO
+
+        FOTO DI BAWAH INI ADALAH PATH YANG SUDAH ADA
+        DI WEBSITE KAMU.
+
+        UNTUK MENAMBAH FOTO:
+        COPY FORMAT SATU FOTO LALU GANTI PATH-NYA.
+
+        CONTOH:
+
+        {
+            image: "kategori_wedding/upload/rionaldo/2.jpg",
+            category: "Wedding",
+            title: "Rionaldo & Silvia",
+            link: "kategori_wedding/rionaldo_silvia.html"
+        }
+
+        ======================================================
+        */
+
+
+        const galleryPhotos = [
+
+            {
+                image:
+                    "kategori_wedding/upload/rionaldo/1.jpg",
+
+                category:
+                    "Wedding",
+
+                title:
+                    "Rionaldo & Silvia",
+
+                link:
+                    "kategori_wedding/rionaldo_silvia.html"
+            },
+
+
+            {
+                image:
+                    "kategori_wedding/upload/novita/28.jpg",
+
+                category:
+                    "Wedding",
+
+                title:
+                    "Arif & Novita",
+
+                link:
+                    "kategori_wedding/arif_novita.html"
+            },
+
+
+            {
+                image:
+                    "kategori_lamaran/upload/fariz/6.jpg",
+
+                category:
+                    "Engagement",
+
+                title:
+                    "Fariz & Citra",
+
+                link:
+                    "kategori_lamaran/fariz_citra.html"
+            },
+
+
+            {
+                image:
+                    "kategori_preweding/upload/esa/12.jpg",
+
+                category:
+                    "Prewedding",
+
+                title:
+                    "Prewedding",
+
+                link:
+                    "kategori_preweding/prewedding.html"
+            }
+
+        ];
+
+
+
+        /*
+        ======================================================
+        RANDOM SHUFFLE
+
+        Setiap kali halaman dibuka,
+        urutan foto akan berubah.
+        ======================================================
+        */
+
+        function shuffle(array) {
+
+            const newArray =
+                [...array];
+
+
+            for (
+                let i = newArray.length - 1;
+                i > 0;
+                i--
+            ) {
+
+                const j =
+                    Math.floor(
+                        Math.random() * (i + 1)
+                    );
+
+
+                [
+                    newArray[i],
+                    newArray[j]
+                ] =
+                [
+                    newArray[j],
+                    newArray[i]
+                ];
+
+            }
+
+
+            return newArray;
+
+        }
+
+
+
+        /*
+        ======================================================
+        RENDER GALLERY
+        ======================================================
+        */
+
+        const gallery =
+            document.getElementById(
+                "randomGallery"
+            );
+
+
+        if (!gallery) return;
+
+
+
+        const shuffledPhotos =
+            shuffle(
+                galleryPhotos
+            );
+
+
+
+        shuffledPhotos.forEach(
+            function (photo) {
+
+
+                const item =
+                    document.createElement(
+                        "a"
+                    );
+
+
+                item.className =
+                    "gallery-item";
+
+
+                item.href =
+                    photo.link;
+
+
+                item.innerHTML = `
+
+                    <img
+                        src="${photo.image}"
+                        alt="${photo.title}"
+                        loading="lazy"
+                    >
+
+                    <div class="gallery-overlay">
+
+                        <div class="gallery-category">
+                            ${photo.category}
+                        </div>
+
+                        <div class="gallery-title">
+                            ${photo.title}
+                        </div>
+
+                    </div>
+
+                    <div class="gallery-arrow">
+
+                        <span class="material-symbols-outlined">
+                            arrow_forward
+                        </span>
+
+                    </div>
+
+                `;
+
+
+                gallery.appendChild(
+                    item
+                );
+
+            }
+        );
+
+
+    }
+
+);
+
+</script>

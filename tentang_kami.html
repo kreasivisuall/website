@@ -1,264 +1,2525 @@
 <!DOCTYPE html>
+<html class="dark" lang="id">
 
-<html class="dark" lang="id"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Tentang Kami - Kreasi Visual</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script>
+<head>
+
+    <meta charset="utf-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Tentang Kami - Kreasi Visual</title>
+
+
+    <!-- =====================================================
+         TAILWIND
+    ====================================================== -->
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Lato:wght@300;400;700;900&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         MATERIAL ICONS
+    ====================================================== -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         TAILWIND CONFIG
+    ====================================================== -->
+
+    <script>
+
         tailwind.config = {
+
             darkMode: "class",
+
             theme: {
+
                 extend: {
+
                     colors: {
-                        "primary": "#E0C39A",
+
+                        primary: "#E0C39A",
+
                         "primary-darker": "#C8A97E",
-                        "background-light": "#F9F6F2",
+
                         "background-dark": "#121212",
+
+                        "surface-dark": "#1E1E1E",
+
                         "text-light": "#F9F6F2",
-                        "text-dark": "#333333",
-                        "surface-dark": "#1E1E1E"
+
+                        "text-dark": "#333333"
+
                     },
+
                     fontFamily: {
-                        "display": ["Playfair Display", "serif"],
-                        "body": ["Lato", "sans-serif"],
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                },
-            },
-        }
+
+                        display: [
+                            "Playfair Display",
+                            "serif"
+                        ],
+
+                        body: [
+                            "Lato",
+                            "sans-serif"
+                        ]
+
+                    }
+
+                }
+
+            }
+
+        };
+
     </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings:
-                'FILL' 0,
-                'wght' 300,
-                'GRAD' 0,
-                'opsz' 24
+
+
+    <!-- =====================================================
+         GLOBAL CSS
+    ====================================================== -->
+
+    <style>
+
+        /* =================================================
+           RESET
+        ================================================= */
+
+        html,
+        body {
+
+            margin: 0;
+            padding: 0;
+
+            width: 100%;
+            min-height: 100%;
+
+            background: #121212 !important;
+
+            color: #F9F6F2;
+
         }
+
+
+        body {
+
+            min-height: 100vh;
+
+            font-family: "Lato", sans-serif;
+
+            overflow-x: hidden;
+
+        }
+
+
+        * {
+
+            box-sizing: border-box;
+
+        }
+
+
+        /* =================================================
+           MATERIAL ICON
+        ================================================= */
+
+        .material-symbols-outlined {
+
+            font-variation-settings:
+                "FILL" 0,
+                "wght" 300,
+                "GRAD" 0,
+                "opsz" 24;
+
+        }
+
+
+        /* =================================================
+           MAIN
+        ================================================= */
+
+        main {
+
+            width: 100%;
+
+            background: #121212 !important;
+
+            min-height: calc(100vh - 70px);
+
+        }
+
+
+        /* =================================================
+           NAVBAR
+        ================================================= */
+
+        .main-navbar {
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+            width: 100%;
+
+            height: 70px;
+
+            background: #121212;
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,0.07);
+
+        }
+
+
+        .navbar-container {
+
+            max-width: 1280px;
+
+            height: 100%;
+
+            margin: 0 auto;
+
+            padding: 0 32px;
+
+        }
+
+
+        .navbar-inner {
+
+            height: 100%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+        }
+
+
+        /* =================================================
+           LOGO
+        ================================================= */
+
+        .logo-link {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            color: #F9F6F2;
+
+            text-decoration: none;
+
+        }
+
+
+        .logo-icon {
+
+            color: #E0C39A;
+
+            font-size: 32px;
+
+        }
+
+
+        .logo-text {
+
+            color: #F9F6F2;
+
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size: 27px;
+
+            font-weight: 700;
+
+            white-space: nowrap;
+
+        }
+
+
+        /* =================================================
+           DESKTOP MENU
+        ================================================= */
+
+        .desktop-menu {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 40px;
+
+        }
+
+
+        .desktop-menu a {
+
+            position: relative;
+
+            display: flex;
+
+            align-items: center;
+
+            height: 70px;
+
+            color:
+                rgba(249,246,242,0.78);
+
+            font-family:
+                "Lato",
+                sans-serif;
+
+            font-size: 16px;
+
+            font-weight: 500;
+
+            text-decoration: none;
+
+            transition:
+                color 0.25s ease;
+
+        }
+
+
+        .desktop-menu a:hover {
+
+            color: #E0C39A;
+
+        }
+
+
+        .desktop-menu a.active {
+
+            color: #E0C39A;
+
+            font-weight: 700;
+
+        }
+
+
+        .desktop-menu a.active::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            right: 0;
+
+            bottom: 15px;
+
+            height: 2px;
+
+            background: #E0C39A;
+
+        }
+
+
+        /* =================================================
+           MOBILE BUTTON
+        ================================================= */
+
+        #mobileMenuBtn {
+
+            display: none;
+
+            width: 44px;
+
+            height: 44px;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border: none;
+
+            outline: none;
+
+            background: transparent;
+
+            color: #F9F6F2;
+
+            cursor: pointer;
+
+            border-radius: 6px;
+
+        }
+
+
+        #mobileMenuBtn:hover {
+
+            color: #E0C39A;
+
+            background:
+                rgba(224,195,154,0.08);
+
+        }
+
+
+        #mobileMenuBtn
+        .material-symbols-outlined {
+
+            font-size: 30px;
+
+        }
+
+
+        /* =================================================
+           MOBILE MENU
+        ================================================= */
+
+        #mobileMenu {
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 9999;
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            pointer-events: none;
+
+            transition:
+                opacity 0.25s ease,
+                visibility 0.25s ease;
+
+        }
+
+
+        #mobileMenu.show {
+
+            opacity: 1;
+
+            visibility: visible;
+
+            pointer-events: auto;
+
+        }
+
+
+        #menuBackdrop {
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                rgba(0,0,0,0.78);
+
+            backdrop-filter: blur(3px);
+
+        }
+
+
+        #mobileSidebar {
+
+            position: absolute;
+
+            left: 0;
+
+            top: 0;
+
+            width: 280px;
+
+            max-width: 85vw;
+
+            height: 100vh;
+
+            background: #121212;
+
+            border-right:
+                1px solid
+                rgba(255,255,255,0.08);
+
+            box-shadow:
+                15px 0 40px
+                rgba(0,0,0,0.5);
+
+            transform:
+                translateX(-100%);
+
+            transition:
+                transform 0.3s ease;
+
+        }
+
+
+        #mobileMenu.show
+        #mobileSidebar {
+
+            transform:
+                translateX(0);
+
+        }
+
+
+        /* =================================================
+           MOBILE HEADER
+        ================================================= */
+
+        .mobile-header {
+
+            height: 70px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 0 20px;
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,0.07);
+
+        }
+
+
+        .mobile-logo {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+        }
+
+
+        .mobile-logo-icon {
+
+            color: #E0C39A;
+
+            font-size: 28px;
+
+        }
+
+
+        .mobile-logo-text {
+
+            color: #F9F6F2;
+
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size: 20px;
+
+            font-weight: 700;
+
+        }
+
+
+        /* =================================================
+           CLOSE BUTTON
+        ================================================= */
+
+        #closeMenu {
+
+            width: 42px;
+
+            height: 42px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border: none;
+
+            outline: none;
+
+            background: transparent;
+
+            color: #F9F6F2;
+
+            cursor: pointer;
+
+            border-radius: 6px;
+
+        }
+
+
+        #closeMenu:hover {
+
+            color: #E0C39A;
+
+            background:
+                rgba(224,195,154,0.08);
+
+        }
+
+
+        /* =================================================
+           MOBILE NAVIGATION
+        ================================================= */
+
+        .mobile-navigation {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 5px;
+
+            padding: 20px 14px;
+
+        }
+
+
+        .mobile-link {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            min-height: 50px;
+
+            padding: 12px 14px;
+
+            color:
+                rgba(249,246,242,0.82);
+
+            font-family:
+                "Lato",
+                sans-serif;
+
+            font-size: 15px;
+
+            font-weight: 500;
+
+            text-decoration: none;
+
+            border-radius: 7px;
+
+            transition:
+                color 0.25s ease,
+                background 0.25s ease;
+
+        }
+
+
+        .mobile-link:hover {
+
+            color: #E0C39A;
+
+            background:
+                rgba(224,195,154,0.07);
+
+        }
+
+
+        .mobile-link.active {
+
+            color: #E0C39A;
+
+            background:
+                rgba(224,195,154,0.08);
+
+            font-weight: 700;
+
+        }
+
+
+        .mobile-link.active
+        .material-symbols-outlined {
+
+            color: #E0C39A;
+
+        }
+
+
+        /* =================================================
+           ABOUT HERO
+        ================================================= */
+
+        .about-hero-wrapper {
+
+            padding:
+                24px 16px 0;
+
+        }
+
+
+        .about-hero {
+
+            position: relative;
+
+            max-width: 1280px;
+
+            height: 430px;
+
+            margin: 0 auto;
+
+            overflow: hidden;
+
+            border-radius: 18px;
+
+            background-color: #1E1E1E;
+
+            box-shadow:
+                0 25px 70px
+                rgba(0,0,0,0.35);
+
+        }
+
+
+        .about-hero-image {
+
+            position: absolute;
+
+            inset: 0;
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            object-position: center 35%;
+
+            display: block;
+
+            transform: scale(1.01);
+
+        }
+
+
+        .about-hero-overlay {
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    rgba(0,0,0,0.05) 0%,
+                    rgba(0,0,0,0.10) 45%,
+                    rgba(0,0,0,0.58) 100%
+                );
+
+        }
+
+
+        .about-hero-content {
+
+            position: absolute;
+
+            left: 0;
+
+            right: 0;
+
+            bottom: 0;
+
+            padding: 40px;
+
+            text-align: left;
+
+        }
+
+
+        .about-hero-label {
+
+            color: #E0C39A;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            letter-spacing: 0.28em;
+
+            text-transform: uppercase;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .about-hero-title {
+
+            color: #FFFFFF;
+
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size: 38px;
+
+            line-height: 1.15;
+
+            font-weight: 700;
+
+            margin: 0;
+
+        }
+
+
+        /* =================================================
+           INTRO
+        ================================================= */
+
+        .about-intro {
+
+            max-width: 900px;
+
+            margin: 0 auto;
+
+            padding:
+                75px 24px 55px;
+
+            text-align: center;
+
+        }
+
+
+        .about-eyebrow {
+
+            color: #E0C39A;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            letter-spacing: 0.25em;
+
+            text-transform: uppercase;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .about-title {
+
+            color: #F9F6F2;
+
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size: 46px;
+
+            line-height: 1.15;
+
+            font-weight: 700;
+
+            margin: 0 0 24px;
+
+        }
+
+
+        .about-description {
+
+            color: #BDBDBD;
+
+            font-size: 18px;
+
+            line-height: 1.8;
+
+            margin: 0 auto;
+
+            max-width: 760px;
+
+        }
+
+
+        /* =================================================
+           2021 SECTION
+        ================================================= */
+
+        .since-section {
+
+            padding:
+                10px 16px 70px;
+
+        }
+
+
+        .since-card {
+
+            position: relative;
+
+            max-width: 1000px;
+
+            margin: 0 auto;
+
+            padding:
+                55px 40px;
+
+            overflow: hidden;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #202020,
+                    #181818
+                );
+
+            border:
+                1px solid
+                rgba(224,195,154,0.20);
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 20px 60px
+                rgba(0,0,0,0.25);
+
+        }
+
+
+        .since-number {
+
+            position: absolute;
+
+            right: 25px;
+
+            top: -20px;
+
+            color:
+                rgba(224,195,154,0.05);
+
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size: 150px;
+
+            line-height: 1;
+
+            font-weight: 700;
+
+            user-select: none;
+
+        }
+
+
+        .since-icon {
+
+            position: relative;
+
+            color: #E0C39A;
+
+            font-size: 32px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .since-label {
+
+            position: relative;
+
+            color: #E0C39A;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            letter-spacing: 0.32em;
+
+            text-transform: uppercase;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .since-title {
+
+            position: relative;
+
+            color: #F9F6F2;
+
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size: 32px;
+
+            line-height: 1.25;
+
+            font-weight: 700;
+
+            margin: 0 0 20px;
+
+        }
+
+
+        .since-text {
+
+            position: relative;
+
+            max-width: 760px;
+
+            margin: 0 auto;
+
+            color: #BDBDBD;
+
+            font-size: 17px;
+
+            line-height: 1.8;
+
+        }
+
+
+        /* =================================================
+           PHILOSOPHY
+        ================================================= */
+
+        .philosophy-section {
+
+            padding:
+                10px 16px 70px;
+
+        }
+
+
+        .philosophy-container {
+
+            max-width: 1000px;
+
+            margin: 0 auto;
+
+        }
+
+
+        .section-heading {
+
+            margin-bottom: 40px;
+
+        }
+
+
+        .section-eyebrow {
+
+            color: #E0C39A;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            letter-spacing: 0.25em;
+
+            text-transform: uppercase;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .section-title {
+
+            color: #F9F6F2;
+
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size: 38px;
+
+            line-height: 1.2;
+
+            font-weight: 700;
+
+            margin: 0;
+
+        }
+
+
+        /* =================================================
+           VISION MISSION GRID
+        ================================================= */
+
+        .vision-mission-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0,1fr));
+
+            gap: 24px;
+
+        }
+
+
+        .philosophy-card {
+
+            padding: 32px;
+
+            background: #1E1E1E;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.06);
+
+            border-radius: 16px;
+
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease;
+
+        }
+
+
+        .philosophy-card:hover {
+
+            transform: translateY(-4px);
+
+            border-color:
+                rgba(224,195,154,0.30);
+
+        }
+
+
+        .philosophy-card-icon {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            width: 48px;
+
+            height: 48px;
+
+            margin-bottom: 20px;
+
+            border-radius: 12px;
+
+            color: #E0C39A;
+
+            background:
+                rgba(224,195,154,0.10);
+
+        }
+
+
+        .philosophy-card-icon
+        .material-symbols-outlined {
+
+            font-size: 25px;
+
+        }
+
+
+        .philosophy-card h3 {
+
+            color: #E0C39A;
+
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size: 25px;
+
+            font-weight: 700;
+
+            margin: 0 0 14px;
+
+        }
+
+
+        .philosophy-card p {
+
+            color: #BDBDBD;
+
+            font-size: 16px;
+
+            line-height: 1.8;
+
+            margin: 0;
+
+        }
+
+
+        /* =================================================
+           CLOSING
+        ================================================= */
+
+        .closing-section {
+
+            padding:
+                5px 16px 55px;
+
+        }
+
+
+        .closing-container {
+
+            max-width: 900px;
+
+            margin: 0 auto;
+
+            padding-top: 55px;
+
+            border-top:
+                1px solid
+                rgba(255,255,255,0.08);
+
+            text-align: center;
+
+        }
+
+
+        .closing-icon {
+
+            color: #E0C39A;
+
+            font-size: 32px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .closing-title {
+
+            color: #F9F6F2;
+
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size: 34px;
+
+            font-weight: 700;
+
+            line-height: 1.25;
+
+            margin: 0 0 16px;
+
+        }
+
+
+        .closing-text {
+
+            color: #BDBDBD;
+
+            font-size: 17px;
+
+            line-height: 1.8;
+
+            max-width: 700px;
+
+            margin: 0 auto;
+
+        }
+
+
+        /* =================================================
+           CTA
+        ================================================= */
+
+        .cta-section {
+
+            padding:
+                0 16px 60px;
+
+        }
+
+
+        .cta-container {
+
+            max-width: 1000px;
+
+            margin: 0 auto;
+
+        }
+
+
+        .cta-button {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            width: 100%;
+
+            min-height: 58px;
+
+            padding: 14px 24px;
+
+            border-radius: 12px;
+
+            background: #E0C39A;
+
+            color: #121212;
+
+            font-family:
+                "Lato",
+                sans-serif;
+
+            font-size: 16px;
+
+            font-weight: 700;
+
+            letter-spacing: 0.08em;
+
+            text-decoration: none;
+
+            box-shadow:
+                0 15px 35px
+                rgba(224,195,154,0.16);
+
+            transition:
+                background 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+
+        }
+
+
+        .cta-button:hover {
+
+            background: #C8A97E;
+
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+                0 18px 40px
+                rgba(224,195,154,0.22);
+
+        }
+
+
+        .cta-button
+        .material-symbols-outlined {
+
+            margin-left: 8px;
+
+            font-size: 21px;
+
+        }
+
+
+        /* =================================================
+           MOBILE
+        ================================================= */
+
+        @media (max-width: 767px) {
+
+
+            .main-navbar {
+
+                height: 68px;
+
+            }
+
+
+            .navbar-container {
+
+                padding: 0 18px;
+
+            }
+
+
+            .navbar-inner {
+
+                height: 68px;
+
+            }
+
+
+            .desktop-menu {
+
+                display: none !important;
+
+            }
+
+
+            #mobileMenuBtn {
+
+                display: flex !important;
+
+            }
+
+
+            .logo-icon {
+
+                font-size: 29px;
+
+            }
+
+
+            .logo-text {
+
+                font-size: 21px;
+
+            }
+
+
+            .about-hero-wrapper {
+
+                padding:
+                    16px 12px 0;
+
+            }
+
+
+            .about-hero {
+
+                height: 290px;
+
+                border-radius: 14px;
+
+            }
+
+
+            .about-hero-image {
+
+                object-position:
+                    center 30%;
+
+            }
+
+
+            .about-hero-content {
+
+                padding:
+                    25px 22px;
+
+            }
+
+
+            .about-hero-title {
+
+                font-size: 29px;
+
+            }
+
+
+            .about-intro {
+
+                padding:
+                    55px 20px 40px;
+
+            }
+
+
+            .about-title {
+
+                font-size: 34px;
+
+            }
+
+
+            .about-description {
+
+                font-size: 16px;
+
+                line-height: 1.75;
+
+            }
+
+
+            .since-section {
+
+                padding:
+                    5px 12px 50px;
+
+            }
+
+
+            .since-card {
+
+                padding:
+                    42px 22px;
+
+                border-radius: 16px;
+
+            }
+
+
+            .since-number {
+
+                font-size: 100px;
+
+                right: 5px;
+
+                top: -5px;
+
+            }
+
+
+            .since-title {
+
+                font-size: 27px;
+
+            }
+
+
+            .since-text {
+
+                font-size: 15px;
+
+                line-height: 1.75;
+
+            }
+
+
+            .philosophy-section {
+
+                padding:
+                    5px 12px 50px;
+
+            }
+
+
+            .section-heading {
+
+                margin-bottom: 25px;
+
+            }
+
+
+            .section-title {
+
+                font-size: 31px;
+
+            }
+
+
+            .vision-mission-grid {
+
+                grid-template-columns: 1fr;
+
+                gap: 16px;
+
+            }
+
+
+            .philosophy-card {
+
+                padding: 25px;
+
+            }
+
+
+            .philosophy-card h3 {
+
+                font-size: 23px;
+
+            }
+
+
+            .philosophy-card p {
+
+                font-size: 15px;
+
+                line-height: 1.75;
+
+            }
+
+
+            .closing-section {
+
+                padding:
+                    0 12px 45px;
+
+            }
+
+
+            .closing-container {
+
+                padding-top: 40px;
+
+            }
+
+
+            .closing-title {
+
+                font-size: 28px;
+
+            }
+
+
+            .closing-text {
+
+                font-size: 15px;
+
+                line-height: 1.75;
+
+            }
+
+
+            .cta-section {
+
+                padding:
+                    0 12px 40px;
+
+            }
+
+
+            .cta-button {
+
+                min-height: 55px;
+
+                font-size: 14px;
+
+            }
+
+        }
+
+
+        /* =================================================
+           DESKTOP
+        ================================================= */
+
+        @media (min-width: 768px) {
+
+            .desktop-menu {
+
+                display: flex;
+
+            }
+
+
+            #mobileMenuBtn {
+
+                display: none !important;
+
+            }
+
+
+            #mobileMenu {
+
+                display: none !important;
+
+            }
+
+        }
+
+
     </style>
+
 </head>
-<body class="font-body bg-background-light dark:bg-background-dark text-text-dark dark:text-text-light">
-<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
-<div class="layout-container flex h-full grow flex-col">
-<div class="flex flex-1 justify-center">
-<div class="layout-content-container flex flex-col w-full max-w-[1366px] flex-1">
-<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 px-6 md:px-12 py-5 bg-background-dark/80 backdrop-blur-md">
-<div class="flex items-center gap-4 text-text-light">
-<div class="size-6 text-primary">
-<span class="material-symbols-outlined !text-4xl">photo_camera</span>
-</div>
-<h2 class="text-text-light font-display text-2xl font-bold">Lensa Cerita</h2>
-</div>
-<!-- NAVBAR -->
-<div class="hidden md:flex flex-1 justify-end">
-  <nav class="flex items-center gap-10">
-    <a class="text-text-light/80 hover:text-primary font-body text-base font-medium tracking-wider transition-colors" href="index.html">BERANDA</a>
-
-    <a class="text-text-light/80 hover:text-primary font-body text-base font-medium tracking-wider transition-colors" href="portfolio.html">PORTOFOLIO</a>
-
-    <!-- Dropdown -->
-    <!-- <div class="relative"> -->
-  <!-- Checkbox untuk toggle -->
-  <!-- <input type="checkbox" id="menuLayanan" class="peer hidden"> -->
-
-  <!-- Tombol utama -->
-  <!-- <label for="menuLayanan" class="flex items-center gap-1 cursor-pointer text-text-light/80 hover:text-primary font-body text-base font-medium tracking-wider"> -->
-
-    <!-- LAYANAN -->
-
-    <!-- Icon panah (rotasi bekerja) -->
-    <!-- <span class="material-symbols-outlined text-sm inline-block transition-transform duration-300 peer-checked:rotate-180">
-      expand_more
-    </span>
-  </label> -->
-
-  <!-- Dropdown -->
-  <!-- <div class="absolute hidden peer-checked:block bg-black text-white shadow-lg rounded-md py-2 w-48 z-50 border border-white/10 mt-2">
-    <a href="daftar_layanan.html" class="block px-4 py-2 hover:bg-white/10">Wedding</a>
-    <a href="daftar_layanan.html" class="block px-4 py-2 hover:bg-white/10">Prewedding</a>
-    <a href="daftar_layanan.html" class="block px-4 py-2 hover:bg-white/10">Acara Keluarga</a>
-    <a href="daftar_layanan.html" class="block px-4 py-2 hover:bg-white/10">Lamaran</a>
-  </div>
-</div> -->
 
 
+<body>
 
-    <a class="text-text-light/80 hover:text-primary font-body text-base font-medium tracking-wider transition-colors" href="tentang_kami.html">TENTANG</a>
-    <a class="text-text-light/80 hover:text-primary font-body text-base font-medium tracking-wider transition-colors" href="contact.html">KONTAK</a>
-  </nav>
-</div>
 
-<!-- MOBILE BUTTON -->
-<div class="md:hidden">
-  <button id="mobileMenuBtn" class="flex cursor-pointer items-center justify-center rounded-lg h-10 bg-transparent text-white gap-2 px-2.5">
-    <span class="material-symbols-outlined !text-3xl text-white">menu</span>
-  </button>
-</div>
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
 
-<!-- MOBILE SIDE MENU -->
-<div id="mobileMenu" class="fixed inset-0 z-50 hidden">
-  <!-- Backdrop -->
-  <div id="menuBackdrop" class="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
+<header class="main-navbar">
 
-  <!-- Panel samping -->
-  <div class="absolute left-0 top-0 h-full w-[280px] bg-background-dark p-5 text-white shadow-xl animate-slideIn">
-    <div class="flex items-center justify-between mb-6">
-      <h2 class="text-xl font-bold">kreasi_visual</h2>
-      <button id="closeMenu" class="p-2 rounded-full hover:bg-white/20">
-        <span class="material-symbols-outlined">close</span>
-      </button>
+    <div class="navbar-container">
+
+        <div class="navbar-inner">
+
+
+            <!-- LOGO -->
+
+            <a
+                href="index.html"
+                class="logo-link"
+            >
+
+                <span
+                    class="material-symbols-outlined logo-icon"
+                >
+                    photo_camera
+                </span>
+
+                <span class="logo-text">
+                    KREASI VISUAL
+                </span>
+
+            </a>
+
+
+            <!-- DESKTOP MENU -->
+
+            <nav class="desktop-menu">
+
+                <a href="index.html">
+                    HOME
+                </a>
+
+                <a href="portfolio.html">
+                    PORTFOLIO
+                </a>
+
+                <a href="tentang_kami.html">
+                    ABOUT
+                </a>
+
+                <a href="contact.html">
+                    CONTACT
+                </a>
+
+            </nav>
+
+
+            <!-- MOBILE BUTTON -->
+
+            <button
+                id="mobileMenuBtn"
+                type="button"
+                aria-label="Buka menu"
+                aria-expanded="false"
+            >
+
+                <span
+                    class="material-symbols-outlined"
+                >
+                    menu
+                </span>
+
+            </button>
+
+        </div>
+
     </div>
-
-    <nav class="bg-background-dark">
-      <ul class="flex flex-col gap-3 text-base font-medium">
-
-        <li><a href="index.html" class="flex items-center gap-3 py-2 px-2 rounded-lg hover:bg-black/10"><span class="material-symbols-outlined">home</span> Beranda</a></li>
-
-        <li><a href="portfolio.html" class="flex items-center gap-3 py-2 px-2 rounded-lg hover:bg-black/10"><span class="material-symbols-outlined">photo_camera</span> Portofolio</a></li>
-
-        <!-- Submenu -->
-        <!-- <li>
-  <details class="group w-full">
-    <summary class="flex w-full items-center justify-between gap-3 py-2 px-2 rounded-lg cursor-pointer hover:bg-white/10 select-none"> -->
-
-      <!-- kiri -->
-      <!-- <div class="flex items-center gap-3">
-        <span class="material-symbols-outlined text-white">design_services</span>
-        <span class="text-white">Layanan</span>
-      </div> -->
-
-      <!-- panah -->
-      <!-- <span class="material-symbols-outlined text-white transition-transform duration-300 group-open:rotate-180">
-        expand_more
-      </span>
-
-    </summary> -->
-
-    <!-- SUBMENU FULL DARK -->
-    <!-- <div class="mt-2 ml-3 flex flex-col gap-2 bg-background-dark p-3 rounded-lg shadow-md ">
-      <a href="daftar_layanan.html" class="text-white hover:underline">Wedding</a>
-      <a href="daftar_layanan.html" class="text-white hover:underline">Prewedding</a>
-      <a href="daftar_layanan.html" class="text-white hover:underline">Acara Keluarga</a>
-      <a href="daftar_layanan.html" class="text-white hover:underline">Lamaran</a>
-    </div>
-
-  </details>
-</li> -->
-
-
-        <li><a href="tentang_kami.html" class="flex items-center gap-3 py-2 px-2 rounded-lg hover:bg-black/10"><span class="material-symbols-outlined">info</span> Tentang Kami</a></li>
-
-        <li><a href="contact.html" class="flex items-center gap-3 py-2 px-2 rounded-lg hover:bg-black/10"><span class="material-symbols-outlined">mail</span> Kontak</a></li>
-
-      </ul>
-    </nav>
-  </div>
-</div>
-
-<!-- ANIMASI -->
-<style>
-  @keyframes slideIn {
-    from { transform: translateX(-100%); }
-    to   { transform: translateX(0); }
-  }
-  .animate-slideIn {
-    animation: slideIn .3s ease-out;
-  }
-</style>
-
-<!-- SCRIPT TOGGLE -->
-<script>
-  const btn = document.getElementById('mobileMenuBtn');
-  const menu = document.getElementById('mobileMenu');
-  const closeBtn = document.getElementById('closeMenu');
-  const backdrop = document.getElementById('menuBackdrop');
-
-  btn.onclick = () => menu.classList.remove('hidden');
-  closeBtn.onclick = () => menu.classList.add('hidden');
-  backdrop.onclick = () => menu.classList.add('hidden');
-</script>
-
 
 </header>
-<!-- Hero Image -->
-<div class="@container px-4">
-<div class="w-full bg-center bg-no-repeat bg-cover flex flex-col justify-end overflow-hidden rounded-xl min-h-[280px] shadow-lg" data-alt="Tim kreasi_visual sedang berdiskusi di sebuah studio yang modern dan terang." style='background-image: url("profil.jpg");'></div>
-</div>
-<!-- Intro Section -->
-<div class="px-4">
-<h1 class="text-stone-900 dark:text-white tracking-tight text-[32px] font-bold leading-tight text-left pt-6 pb-2">Filosofi Kami</h1>
-<!-- Visi & Misi Section -->
-<div class="px-4">
-  <h2 class="text-stone-900 dark:text-white tracking-tight text-[28px] font-bold leading-tight text-left pt-6 pb-3">
-    Visi &amp; Misi
-  </h2>
 
-  <div class="space-y-4">
 
-    <div>
-      <h3 class="text-primary font-bold text-lg">Visi</h3>
-      <p class="text-stone-700 dark:text-stone-300 text-base font-normal leading-relaxed">
-        Menjadi bagian dari setiap cerita berharga dengan menciptakan karya visual 
-        yang autentik, emosional, dan tak lekang oleh waktu, serta menjadi pilihan 
-        terpercaya bagi setiap individu maupun brand dalam mengabadikan momen terbaik mereka.
-      </p>
+
+<!-- =====================================================
+     MOBILE MENU
+===================================================== -->
+
+<div
+    id="mobileMenu"
+    aria-hidden="true"
+>
+
+
+    <div id="menuBackdrop"></div>
+
+
+    <div id="mobileSidebar">
+
+
+        <!-- MOBILE HEADER -->
+
+        <div class="mobile-header">
+
+            <div class="mobile-logo">
+
+                <span
+                    class="material-symbols-outlined mobile-logo-icon"
+                >
+                    photo_camera
+                </span>
+
+                <span class="mobile-logo-text">
+                    KREASI VISUAL
+                </span>
+
+            </div>
+
+
+            <button
+                id="closeMenu"
+                type="button"
+                aria-label="Tutup menu"
+            >
+
+                <span
+                    class="material-symbols-outlined"
+                >
+                    close
+                </span>
+
+            </button>
+
+        </div>
+
+
+        <!-- MOBILE NAV -->
+
+        <nav class="mobile-navigation">
+
+            <a
+                href="index.html"
+                class="mobile-link"
+            >
+
+                <span
+                    class="material-symbols-outlined"
+                >
+                    home
+                </span>
+
+                <span>
+                    HOME
+                </span>
+
+            </a>
+
+
+            <a
+                href="portfolio.html"
+                class="mobile-link"
+            >
+
+                <span
+                    class="material-symbols-outlined"
+                >
+                    photo_camera
+                </span>
+
+                <span>
+                    PORTFOLIO
+                </span>
+
+            </a>
+
+
+            <a
+                href="tentang_kami.html"
+                class="mobile-link"
+            >
+
+                <span
+                    class="material-symbols-outlined"
+                >
+                    info
+                </span>
+
+                <span>
+                    ABOUT
+                </span>
+
+            </a>
+
+
+            <a
+                href="contact.html"
+                class="mobile-link"
+            >
+
+                <span
+                    class="material-symbols-outlined"
+                >
+                    chat
+                </span>
+
+                <span>
+                    CONTACT
+                </span>
+
+            </a>
+
+        </nav>
+
     </div>
 
-    <div>
-      <h3 class="text-primary font-bold text-lg">Misi</h3>
-      <p class="text-stone-700 dark:text-stone-300 text-base font-normal leading-relaxed">
-        Menghadirkan layanan fotografi dan videografi yang profesional dengan mengutamakan 
-        kualitas, kreativitas, dan ketulusan dalam setiap proses. Kami berusaha memahami 
-        cerita dan karakter setiap klien untuk menghasilkan karya yang bukan hanya indah 
-        dipandang, tetapi juga mampu menghadirkan kembali emosi dari setiap momen.
-      </p>
-    </div>
+</div>
 
-  </div>
-</div>
-<!-- Tim Kami Section -->
-<!-- <div class="pt-8">
-<h2 class="text-stone-900 dark:text-white tracking-tight text-[28px] font-bold leading-tight px-4 text-left pb-4">Tim Kami</h2>
-<div class="relative w-full overflow-x-auto pb-4">
-<div class="flex gap-4 px-4">
-<div class="flex-none w-[150px] text-center">
-<img class="w-full h-[150px] object-cover rounded-xl mb-3 shadow-md" data-alt="Foto potret anggota tim 1, pria tersenyum." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVziZGgfvcZdh_cJPc6X32FIyvduEw_UV-inHNorl90bMLCJnHkQpYqNdlXNiz1gj4Bo6Z23kY76pLeRIFj6i1i9DDOuwmC2I23hpuQXcXVdQMhtn1lHNigK9u_VHbxdox8pxBzAO4xKgsURMRWTaWJyuinkt4OMCSLC9nfF4gnT7rwu-E6eTDxV4FwD4NnJIigeK32Pqnw0E0vvRmNkOubPoxK_svh6Q3_QBYbprsGMqn9sZsbVXymHNNMWLKXyirg6AJGTvSlA"/>
-<h4 class="font-bold text-stone-900 dark:text-white">Andi Pratama</h4>
-<p class="text-sm text-stone-600 dark:text-stone-400">Fotografer Utama</p>
-</div>
-<div class="flex-none w-[150px] text-center">
-<img class="w-full h-[150px] object-cover rounded-xl mb-3 shadow-md" data-alt="Foto potret anggota tim 2, wanita dengan rambut panjang." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXVpvOje1ksYj6SOaq_NML5pJdFhCBft-qLKxn4Rrb2NKnbZ-FXYZ9z6a43FU5Nz2KBbHY4FLV130QaWMKzVq5lFDc3H9Lp0KNfnumVI1ppE6WPA1wVjkEZRdvfxHqpP01rc8Y0sM1I7BQ8fnCxgQ-oro6FKmEn55VXAxaycUjhiD2NEaxuZnaDurqbzf4Lakcorg7QIWqg8-IAEkPHk_0HFoEI8FwXoOmTeC112-qzyufYCwoJulwypWWmjiQ-IjMbSa6SFzEsA"/>
-<h4 class="font-bold text-stone-900 dark:text-white">Citra Lestari</h4>
-<p class="text-sm text-stone-600 dark:text-stone-400">Videografer &amp; Editor</p>
-</div>
-<div class="flex-none w-[150px] text-center">
-<img class="w-full h-[150px] object-cover rounded-xl mb-3 shadow-md" data-alt="Foto potret anggota tim 3, pria dengan latar belakang cerah." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoT7mC95-kh8-bGWVvrknjPhuQ2tA8Xb7QGzvmGW0jUpMigr1JQplr67gk1t-C-O2eW8ZnQWTDXh4uz0VXIPTZyAeCPQSmCbgwIWBsqnQpz2QZRvsP6DBA2aVZfsnXinwFhYYhhZmXkd5paPFgyw3UHGb6EGnKUeEiiPpvbX2QUaLOmbxTad4TGbuVbBfwDAVimPfRhe3k0I_hNabcqLpRRR75YZhDaeoX3VfkLVKZQdi6ng5604wmvuzMy2F-yWFtp23j1MXunA"/>
-<h4 class="font-bold text-stone-900 dark:text-white">Budi Santoso</h4>
-<p class="text-sm text-stone-600 dark:text-stone-400">Creative Director</p>
-</div>
-<div class="flex-none w-[150px] text-center">
-<img class="w-full h-[150px] object-cover rounded-xl mb-3 shadow-md" data-alt="Foto potret anggota tim 4, wanita tersenyum." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9SlRzWvvjWJN--OPvbNRNWZOJnAOQSw8P-tKhE2mUtzDaE6T3KRx7x7v5wGHKqBefsWqG-SZsQONdTi_CQeVHw23evcBgAKt3R_L4zGbg4-PJaXC6M5-87mO-ROXhfk_Dlg4UT2lr6aejZXP6mS-BNOEwDTuHz1EymtzH5sY3Jpl6fjkvT0vLZP4iLlmk5L-Wz7X3UlBUoq_8bkBfnaa9d1Cx1hqNhHG2KZ7v6nJbc_VH4OPm7hA0YJj52dGMw1r1CEZgAkN_zw"/>
-<h4 class="font-bold text-stone-900 dark:text-white">Dewi Anjani</h4>
-<p class="text-sm text-stone-600 dark:text-stone-400">Client Relations</p>
-</div>
-</div>
-</div>
-</div> -->
-<!-- CTA Button Section -->
-<div class="px-4 pt-8 pb-12">
-<button class="w-full bg-primary text-white font-bold py-4 px-5 rounded-xl shadow-lg shadow-primary/30 hover:bg-opacity-90 transition-colors duration-300">
-            Hubungi Kami
-        </button>
-</div>
-</div>
-</body></html>
+
+
+<!-- =====================================================
+     MAIN CONTENT
+===================================================== -->
+
+<main>
+
+
+    <!-- =================================================
+         HERO FOTO
+    ================================================== -->
+
+    <section class="about-hero-wrapper">
+
+        <div class="about-hero">
+
+            <img
+                src="profil.jpg"
+                alt="Kreasi Visual"
+                class="about-hero-image"
+            >
+
+            <div
+                class="about-hero-overlay"
+            ></div>
+
+
+            <div
+                class="about-hero-content"
+            >
+
+                <div
+                    class="about-hero-label"
+                >
+                    KREASI VISUAL
+                </div>
+
+                <h1
+                    class="about-hero-title"
+                >
+                    Cerita Dalam
+                    Setiap Frame
+                </h1>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         INTRO
+    ================================================== -->
+
+    <section class="about-intro">
+
+        <div class="about-eyebrow">
+            ABOUT US
+        </div>
+
+
+        <h2 class="about-title">
+
+            Mengabadikan Cerita,
+            <br>
+
+            Menjaga Setiap Kenangan
+
+        </h2>
+
+
+        <p class="about-description">
+
+            Bagi kami, fotografi dan videografi bukan sekadar
+            tentang mengambil gambar. Setiap frame adalah bagian
+            dari cerita, emosi, dan kenangan yang akan kembali
+            terasa bahkan setelah waktu berlalu.
+
+        </p>
+
+    </section>
+
+
+
+    <!-- =================================================
+         EST 2021
+    ================================================== -->
+
+    <section class="since-section">
+
+        <div class="since-card">
+
+
+            <div class="since-number">
+                2021
+            </div>
+
+
+            <span
+                class="material-symbols-outlined since-icon"
+            >
+                photo_camera
+            </span>
+
+
+            <div class="since-label">
+                EST. 2021
+            </div>
+
+
+            <h2 class="since-title">
+
+                Tumbuh Bersama
+                Setiap Cerita
+
+            </h2>
+
+
+            <p class="since-text">
+
+                Sejak tahun 2021, kami telah hadir untuk
+                mengabadikan berbagai cerita melalui fotografi
+                dan videografi. Dari momen sederhana hingga
+                hari-hari yang begitu berarti, kami percaya
+                bahwa setiap kisah memiliki keindahannya sendiri.
+
+                <br><br>
+
+                Perjalanan ini membuat kami terus belajar,
+                berkembang, dan memahami bahwa sebuah foto
+                bukan hanya tentang apa yang terlihat,
+                tetapi juga tentang apa yang dirasakan.
+
+                Karena itu, kami berusaha menciptakan karya
+                yang tidak hanya indah untuk dilihat hari ini,
+                tetapi juga mampu membawa kembali perasaan
+                yang sama bertahun-tahun kemudian.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         PHILOSOPHY
+    ================================================== -->
+
+    <section class="philosophy-section">
+
+        <div class="philosophy-container">
+
+
+            <!-- HEADING -->
+
+            <div class="section-heading">
+
+                <div class="section-eyebrow">
+                    OUR PHILOSOPHY
+                </div>
+
+                <h2 class="section-title">
+                    Filosofi Kami
+                </h2>
+
+            </div>
+
+
+            <!-- VISION & MISSION -->
+
+            <div class="vision-mission-grid">
+
+
+                <!-- VISI -->
+
+                <div class="philosophy-card">
+
+
+                    <div
+                        class="philosophy-card-icon"
+                    >
+
+                        <span
+                            class="material-symbols-outlined"
+                        >
+                            visibility
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Visi
+                    </h3>
+
+
+                    <p>
+
+                        Menjadi bagian dari setiap cerita berharga
+                        dengan menciptakan karya visual yang autentik,
+                        emosional, dan tak lekang oleh waktu, serta
+                        menjadi pilihan terpercaya bagi setiap individu
+                        maupun brand dalam mengabadikan momen terbaik
+                        mereka.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- MISI -->
+
+                <div class="philosophy-card">
+
+
+                    <div
+                        class="philosophy-card-icon"
+                    >
+
+                        <span
+                            class="material-symbols-outlined"
+                        >
+                            auto_awesome
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Misi
+                    </h3>
+
+
+                    <p>
+
+                        Menghadirkan layanan fotografi dan videografi
+                        yang profesional dengan mengutamakan kualitas,
+                        kreativitas, dan ketulusan dalam setiap proses.
+                        Kami berusaha memahami cerita dan karakter
+                        setiap klien untuk menghasilkan karya yang
+                        bukan hanya indah dipandang, tetapi juga mampu
+                        menghadirkan kembali emosi dari setiap momen.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         CLOSING
+    ================================================== -->
+
+    <section class="closing-section">
+
+        <div class="closing-container">
+
+
+            <span
+                class="material-symbols-outlined closing-icon"
+            >
+                favorite
+            </span>
+
+
+            <h2 class="closing-title">
+
+                Setiap Momen Punya Cerita
+
+            </h2>
+
+
+            <p class="closing-text">
+
+                Dan tugas kami adalah memastikan cerita itu
+                tetap hidup. Bukan hanya dalam ingatan,
+                tetapi juga dalam setiap foto dan video yang
+                dapat Anda lihat kembali kapan saja.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         CTA
+    ================================================== -->
+
+    <section class="cta-section">
+
+        <div class="cta-container">
+
+            <a
+                href="contact.html"
+                class="cta-button"
+            >
+
+                <span>
+                    HUBUNGI KAMI
+                </span>
+
+                <span
+                    class="material-symbols-outlined"
+                >
+                    arrow_forward
+                </span>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+
+        /* =============================================
+           ELEMENT
+        ============================================= */
+
+        const mobileMenuBtn =
+            document.getElementById(
+                "mobileMenuBtn"
+            );
+
+        const mobileMenu =
+            document.getElementById(
+                "mobileMenu"
+            );
+
+        const closeMenu =
+            document.getElementById(
+                "closeMenu"
+            );
+
+        const menuBackdrop =
+            document.getElementById(
+                "menuBackdrop"
+            );
+
+
+        /* =============================================
+           OPEN MENU
+        ============================================= */
+
+        function openMobileMenu() {
+
+            if (!mobileMenu) return;
+
+            mobileMenu.classList.add(
+                "show"
+            );
+
+            mobileMenu.setAttribute(
+                "aria-hidden",
+                "false"
+            );
+
+
+            if (mobileMenuBtn) {
+
+                mobileMenuBtn.setAttribute(
+                    "aria-expanded",
+                    "true"
+                );
+
+            }
+
+
+            document.body.style.overflow =
+                "hidden";
+
+        }
+
+
+        /* =============================================
+           CLOSE MENU
+        ============================================= */
+
+        function closeMobileMenu() {
+
+            if (!mobileMenu) return;
+
+            mobileMenu.classList.remove(
+                "show"
+            );
+
+            mobileMenu.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+
+
+            if (mobileMenuBtn) {
+
+                mobileMenuBtn.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+
+
+            document.body.style.overflow =
+                "";
+
+        }
+
+
+        /* =============================================
+           HAMBURGER
+        ============================================= */
+
+        if (mobileMenuBtn) {
+
+            mobileMenuBtn.addEventListener(
+                "click",
+                openMobileMenu
+            );
+
+        }
+
+
+        /* =============================================
+           CLOSE BUTTON
+        ============================================= */
+
+        if (closeMenu) {
+
+            closeMenu.addEventListener(
+                "click",
+                closeMobileMenu
+            );
+
+        }
+
+
+        /* =============================================
+           BACKDROP
+        ============================================= */
+
+        if (menuBackdrop) {
+
+            menuBackdrop.addEventListener(
+                "click",
+                closeMobileMenu
+            );
+
+        }
+
+
+        /* =============================================
+           CURRENT PAGE
+        ============================================= */
+
+        let currentPage =
+            window.location.pathname
+            .split("/")
+            .pop()
+            .toLowerCase();
+
+
+        if (
+            currentPage === "" ||
+            currentPage === "/"
+        ) {
+
+            currentPage =
+                "index.html";
+
+        }
+
+
+        /* =============================================
+           DESKTOP ACTIVE
+        ============================================= */
+
+        const desktopLinks =
+            document.querySelectorAll(
+                ".desktop-menu a"
+            );
+
+
+        desktopLinks.forEach(
+            function (link) {
+
+                const href =
+                    link.getAttribute(
+                        "href"
+                    );
+
+
+                if (!href) return;
+
+
+                const linkPage =
+                    href
+                    .split("/")
+                    .pop()
+                    .split("?")[0]
+                    .split("#")[0]
+                    .toLowerCase();
+
+
+                link.classList.remove(
+                    "active"
+                );
+
+
+                if (
+                    linkPage === currentPage
+                ) {
+
+                    link.classList.add(
+                        "active"
+                    );
+
+                }
+
+            }
+        );
+
+
+        /* =============================================
+           MOBILE ACTIVE
+        ============================================= */
+
+        const mobileLinks =
+            document.querySelectorAll(
+                ".mobile-link"
+            );
+
+
+        mobileLinks.forEach(
+            function (link) {
+
+                const href =
+                    link.getAttribute(
+                        "href"
+                    );
+
+
+                if (!href) return;
+
+
+                const linkPage =
+                    href
+                    .split("/")
+                    .pop()
+                    .split("?")[0]
+                    .split("#")[0]
+                    .toLowerCase();
+
+
+                link.classList.remove(
+                    "active"
+                );
+
+
+                if (
+                    linkPage === currentPage
+                ) {
+
+                    link.classList.add(
+                        "active"
+                    );
+
+                }
+
+
+                link.addEventListener(
+                    "click",
+                    closeMobileMenu
+                );
+
+            }
+        );
+
+
+        /* =============================================
+           ESC
+        ============================================= */
+
+        document.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (
+                    event.key === "Escape" &&
+                    mobileMenu &&
+                    mobileMenu.classList.contains(
+                        "show"
+                    )
+                ) {
+
+                    closeMobileMenu();
+
+                }
+
+            }
+        );
+
+
+        /* =============================================
+           RESIZE
+        ============================================= */
+
+        window.addEventListener(
+            "resize",
+            function () {
+
+                if (
+                    window.innerWidth >= 768
+                ) {
+
+                    closeMobileMenu();
+
+                }
+
+            }
+        );
+
+    }
+);
+
+</script>
+
+</body>
+
+</html>
