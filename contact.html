@@ -1,0 +1,467 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kontak | KREASI VISUAL</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: #111;
+            color: white;
+        }
+
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* BACKGROUND */
+        .contact-page {
+            min-height: 100vh;
+            position: relative;
+            background-image:
+                linear-gradient(
+                    rgba(0,0,0,0.62),
+                    rgba(0,0,0,0.78)
+                ),
+                url('profil.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* Efek blur tipis */
+        .contact-page::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            backdrop-filter: blur(2px);
+            pointer-events: none;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* BUTTON */
+        .contact-btn {
+            transition: all .3s ease;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(0,0,0,.35);
+        }
+
+        /* MOBILE MENU */
+        #mobileMenu {
+            transition: .3s ease;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="contact-page">
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="content sticky top-0 z-50 border-b border-white/10 bg-black/35 backdrop-blur-xl">
+
+        <div class="max-w-7xl mx-auto px-6 md:px-10 py-5">
+
+            <div class="flex items-center justify-between">
+
+                <!-- LOGO -->
+                <a href="index.html" class="flex items-center gap-3">
+
+                    <span class="material-symbols-outlined text-amber-200 text-4xl">
+                        photo_camera
+                    </span>
+
+                    <span class="font-display text-2xl font-bold">
+                        KREASI VISUAL
+                    </span>
+
+                </a>
+
+
+                <!-- DESKTOP NAV -->
+                <nav class="hidden md:flex items-center gap-10">
+
+                    <a href="index.html"
+                       class="text-white/80 hover:text-amber-200 transition">
+                        BERANDA
+                    </a>
+
+                    <a href="portfolio.html"
+                       class="text-white/80 hover:text-amber-200 transition">
+                        PORTOFOLIO
+                    </a>
+
+                    <a href="tentang_kami.html"
+                       class="text-white/80 hover:text-amber-200 transition">
+                        TENTANG
+                    </a>
+
+                    <a href="contact.html"
+                       class="text-amber-200 font-semibold">
+                        KONTAK
+                    </a>
+
+                </nav>
+
+
+                <!-- MOBILE BUTTON -->
+                <button id="mobileMenuBtn"
+                        class="md:hidden">
+
+                    <span class="material-symbols-outlined text-3xl">
+                        menu
+                    </span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= MOBILE MENU ================= -->
+    <div id="mobileMenu"
+         class="hidden fixed inset-0 z-[100]">
+
+        <div id="menuBackdrop"
+             class="absolute inset-0 bg-black/70 backdrop-blur-sm">
+        </div>
+
+        <div class="absolute left-0 top-0 h-full w-[280px]
+                    bg-[#151515] p-6 shadow-2xl">
+
+            <div class="flex items-center justify-between mb-10">
+
+                <h2 class="font-display text-2xl font-bold">
+                    Lensa Cerita
+                </h2>
+
+                <button id="closeMenu">
+
+                    <span class="material-symbols-outlined">
+                        close
+                    </span>
+
+                </button>
+
+            </div>
+
+            <nav class="flex flex-col gap-5">
+
+                <a href="index.html"
+                   class="flex items-center gap-3 py-3 hover:text-amber-200">
+
+                    <span class="material-symbols-outlined">
+                        home
+                    </span>
+
+                    Beranda
+
+                </a>
+
+                <a href="portfolio.html"
+                   class="flex items-center gap-3 py-3 hover:text-amber-200">
+
+                    <span class="material-symbols-outlined">
+                        photo_camera
+                    </span>
+
+                    Portofolio
+
+                </a>
+
+                <a href="tentang_kami.html"
+                   class="flex items-center gap-3 py-3 hover:text-amber-200">
+
+                    <span class="material-symbols-outlined">
+                        info
+                    </span>
+
+                    Tentang Kami
+
+                </a>
+
+                <a href="contact.html"
+                   class="flex items-center gap-3 py-3 text-amber-200">
+
+                    <span class="material-symbols-outlined">
+                        chat
+                    </span>
+
+                    Kontak
+
+                </a>
+
+            </nav>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= CONTACT ================= -->
+    <main class="content min-h-[calc(100vh-88px)] flex items-center justify-center px-5 py-20">
+
+        <div class="w-full max-w-4xl text-center">
+
+            <!-- LABEL -->
+            <p class="uppercase tracking-[0.35em] text-amber-200 text-sm font-semibold mb-5">
+                Let's Connect
+            </p>
+
+
+            <!-- TITLE -->
+            <h1 class="font-display text-5xl md:text-7xl font-bold leading-tight mb-6">
+
+                Mari Ceritakan
+                <br>
+
+                <span class="text-amber-200">
+                    Cerita Anda
+                </span>
+
+            </h1>
+
+
+            <!-- DESCRIPTION -->
+            <p class="max-w-2xl mx-auto text-white/75 text-base md:text-lg leading-relaxed mb-12">
+
+                Punya pertanyaan, ingin booking jasa fotografi,
+                atau ingin berdiskusi mengenai konsep acara?
+                Silakan hubungi kami langsung melalui WhatsApp
+                atau Instagram.
+
+            </p>
+
+
+            <!-- CONTACT CARD -->
+            <div class="max-w-xl mx-auto">
+
+                <div class="bg-white/10 backdrop-blur-xl
+                            border border-white/20
+                            rounded-3xl
+                            p-6 md:p-8
+                            shadow-2xl">
+
+                    <p class="text-white/60 text-sm mb-6">
+                        Pilih cara yang paling nyaman untuk menghubungi kami
+                    </p>
+
+
+                    <!-- WHATSAPP -->
+                    <a href="https://wa.me/62895366246831"
+                       target="_blank"
+                       class="contact-btn flex items-center gap-5
+                              w-full p-5 mb-4
+                              rounded-2xl
+                              bg-white/10
+                              border border-white/10
+                              hover:bg-white/20">
+
+                        <div class="w-14 h-14 rounded-full
+                                    bg-green-500
+                                    flex items-center justify-center
+                                    shrink-0">
+
+                            <span class="text-2xl font-bold">
+                                WA
+                            </span>
+
+                        </div>
+
+                        <div class="text-left flex-1">
+
+                            <p class="text-sm text-white/55">
+                                WhatsApp
+                            </p>
+
+                            <p class="text-lg font-semibold">
+                                Chat via WhatsApp
+                            </p>
+
+                            <p class="text-sm text-white/50">
+                                Respon lebih cepat
+                            </p>
+
+                        </div>
+
+                        <span class="material-symbols-outlined text-white/60">
+                            arrow_forward
+                        </span>
+
+                    </a>
+
+
+                    <!-- INSTAGRAM -->
+                    <!-- GANTI username_lensa dengan username Instagram kamu -->
+                    <a href="https://www.instagram.com/kreasi.visuall?stkn=MTRuOTZ4ZGVnaGpqdQ=="
+                       target="_blank"
+                       class="contact-btn flex items-center gap-5
+                              w-full p-5
+                              rounded-2xl
+                              bg-white/10
+                              border border-white/10
+                              hover:bg-white/20">
+
+                        <div class="w-14 h-14 rounded-full
+                                    bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600
+                                    flex items-center justify-center
+                                    shrink-0">
+
+                            <span class="material-symbols-outlined text-white text-3xl">
+                                camera_alt
+                            </span>
+
+                        </div>
+
+                        <div class="text-left flex-1">
+
+                            <p class="text-sm text-white/55">
+                                Instagram
+                            </p>
+
+                            <p class="text-lg font-semibold">
+                                Lihat Instagram Kami
+                            </p>
+
+                            <p class="text-sm text-white/50">
+                                Portfolio & karya terbaru
+                            </p>
+
+                        </div>
+
+                        <span class="material-symbols-outlined text-white/60">
+                            arrow_forward
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOOTNOTE -->
+            <p class="text-white/40 text-sm mt-10">
+
+                Kami siap membantu mewujudkan cerita Anda
+                menjadi kenangan yang tak terlupakan.
+
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="content border-t border-white/10">
+
+        <div class="max-w-7xl mx-auto px-6 py-8">
+
+            <div class="flex flex-col md:flex-row
+                        justify-between items-center
+                        gap-4">
+
+                <!-- <p class="text-sm text-white/40">
+                    © 2026 Lensa Cerita. All Rights Reserved.
+                </p> -->
+
+                <div class="flex gap-6">
+
+                    <a href="index.html"
+                       class="text-sm text-white/50 hover:text-amber-200">
+                        Home
+                    </a>
+
+                    <a href="portfolio.html"
+                       class="text-sm text-white/50 hover:text-amber-200">
+                        Portfolio
+                    </a>
+
+                    <a href="contact.html"
+                       class="text-sm text-amber-200">
+                        Contact
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</div>
+
+
+<!-- ================= SCRIPT ================= -->
+<script>
+
+    const mobileMenuBtn =
+        document.getElementById('mobileMenuBtn');
+
+    const mobileMenu =
+        document.getElementById('mobileMenu');
+
+    const closeMenu =
+        document.getElementById('closeMenu');
+
+    const menuBackdrop =
+        document.getElementById('menuBackdrop');
+
+
+    mobileMenuBtn.addEventListener('click', () => {
+
+        mobileMenu.classList.remove('hidden');
+
+    });
+
+
+    closeMenu.addEventListener('click', () => {
+
+        mobileMenu.classList.add('hidden');
+
+    });
+
+
+    menuBackdrop.addEventListener('click', () => {
+
+        mobileMenu.classList.add('hidden');
+
+    });
+
+</script>
+
+</body>
+</html>
+```
